@@ -1,0 +1,6 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#f59e0b"/>
+  <rect x="100" y="100" width="600" height="400" fill="#fcd34d" stroke="#b45309" stroke-width="5"/>
+  <circle cx="400" cy="300" r="100" fill="#b45309"/>
+  <text x="400" y="310" font-family="Arial" font-size="48" fill="white" text-anchor="middle">Rajasthan</text>
+</svg>
