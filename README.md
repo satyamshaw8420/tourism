@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -19,6 +25,36 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Database Setup
+
+This project uses Convex as its database. To set it up:
+
+1. Run the Convex development server:
+   ```bash
+   npx convex dev
+   ```
+
+2. This will create a new Convex project and generate the necessary configuration files.
+
+See [convex/README.md](convex/README.md) for more details about the Convex setup.
+
+## Testing
+
+To test the Convex integration:
+
+1. Start both servers (Convex and Next.js)
+2. Visit [http://localhost:3000/convex-test](http://localhost:3000/convex-test)
+3. Try creating and querying users
+
+See [TESTING.md](TESTING.md) for detailed testing instructions.
+
+## Documentation
+
+- [CONVEX_SETUP.md](CONVEX_SETUP.md) - Summary of the Convex setup
+- [convex/README.md](convex/README.md) - Detailed Convex documentation
+- [MIGRATION.md](MIGRATION.md) - Instructions for migrating from Prisma to Convex
+- [TESTING.md](TESTING.md) - How to test the Convex integration
 
 ## Learn More
 

@@ -156,7 +156,7 @@ export default function FeaturesSection() {
               Why Choose
             </span>
             <br />
-            <span className="text-gray-900">TravelTogether?</span>
+            <span className="text-gray-900">Travel-Ease?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Experience the future of group travel with cutting-edge technology, 

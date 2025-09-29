@@ -1,7 +1,0 @@
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="600" fill="#10b981"/>
-  <polygon points="0,600 200,300 400,600" fill="#065f46"/>
-  <polygon points="300,600 500,200 700,600" fill="#064e3b"/>
-  <circle cx="700" cy="100" r="50" fill="#fbbf24"/>
-  <text x="400" y="300" font-family="Arial" font-size="48" fill="white" text-anchor="middle">Himachal</text>
-</svg>

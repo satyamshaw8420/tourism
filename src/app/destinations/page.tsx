@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Search, Filter, MapPin, Star, Heart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -17,10 +17,16 @@ export default function DestinationsPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [favorites, setFavorites] = useState<string[]>([])
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const filteredDestinations = sampleDestinations.filter((destination) => {
     const matchesSearch = destination.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         destination.description.toLowerCase().includes(searchTerm.toLowerCase())
+                         destination.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         destination.location.address.toLowerCase().includes(searchTerm.toLowerCase())
     const matchesCategory = selectedCategory === 'all' || destination.category === selectedCategory
     return matchesSearch && matchesCategory
   })
@@ -46,6 +52,26 @@ export default function DestinationsPage() {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
+  }
+
+  // Show skeleton while loading to prevent hydration issues
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <div className="h-16 bg-gray-200 animate-pulse"></div>
+        <div className="h-96 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 animate-pulse"></div>
+        <div className="container mx-auto px-4 -mt-12">
+          <div className="h-48 bg-white rounded-3xl shadow-2xl animate-pulse mb-12"></div>
+        </div>
+        <div className="container mx-auto px-4 pb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="bg-white rounded-xl shadow-lg h-96 animate-pulse"></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -128,6 +154,13 @@ export default function DestinationsPage() {
 
       {/* Destinations Grid */}
       <div className="container mx-auto px-4 pb-16">
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900">Explore Destinations</h2>
+          <div className="text-sm text-gray-500">
+            Showing {filteredDestinations.length} destinations
+          </div>
+        </div>
+        
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -171,6 +204,13 @@ export default function DestinationsPage() {
                   {destination.featured && (
                     <div className="absolute top-3 left-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold">
                       ⭐ Featured
+                    </div>
+                  )}
+                  
+                  {/* Jharkhand Special Badge */}
+                  {destination.location.address.includes('Jharkhand') && (
+                    <div className="absolute top-3 left-3 bg-gradient-to-r from-green-500 to-teal-600 text-white px-3 py-1 rounded-full text-xs font-bold">
+                      🌿 Jharkhand
                     </div>
                   )}
                 </div>

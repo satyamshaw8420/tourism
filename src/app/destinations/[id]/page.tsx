@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, use } from 'react'
+import { useState, use, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowLeft, MapPin, Star, Calendar, Users, Clock, Heart, Share2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -18,10 +18,15 @@ interface DestinationDetailPageProps {
 
 export default function DestinationDetailPage({ params }: DestinationDetailPageProps) {
   const [isFavorite, setIsFavorite] = useState(false)
+  const [isClient, setIsClient] = useState(false)
   
   // Unwrap params using React.use()
   const { id } = use(params)
   const destination = sampleDestinations.find(d => d.id === id)
+  
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
   
   if (!destination) {
     notFound()
@@ -31,6 +36,176 @@ export default function DestinationDetailPage({ params }: DestinationDetailPageP
   const relatedTours = sampleTourPackages.filter(tour => 
     tour.destination.id === destination.id
   )
+  
+  // Local vendors data for Jharkhand destinations
+  const getLocalVendors = () => {
+    if (destination.location.address.includes('Ranchi')) {
+      return [
+        {
+          id: '1',
+          name: 'Ranchi Tribal Crafts',
+          description: 'Authentic tribal handicrafts from Ranchi including wooden sculptures and bamboo products',
+          rating: 4.8,
+          reviewCount: 124,
+          specialties: ['Wooden crafts', 'Bamboo products', 'Tribal jewelry', 'Handwoven textiles'],
+          image: '/vendors/tribal-crafts.jpg'
+        },
+        {
+          id: '2',
+          name: 'Ranchi Hill Guides',
+          description: 'Local guides offering personalized tours of waterfalls and natural sites',
+          rating: 4.9,
+          reviewCount: 210,
+          specialties: ['Waterfall tours', 'Nature walks', 'Bird watching', 'Tribal village visits'],
+          image: '/vendors/guides.jpg'
+        }
+      ];
+    } else if (destination.location.address.includes('Deoghar')) {
+      return [
+        {
+          id: '1',
+          name: 'Deoghar Sweet House',
+          description: 'Famous for authentic Deoghar peda and other traditional sweets',
+          rating: 4.9,
+          reviewCount: 256,
+          specialties: ['Deoghar Peda', 'Traditional sweets', 'Dry fruits', 'Local delicacies'],
+          image: '/vendors/sweets.jpg'
+        },
+        {
+          id: '2',
+          name: 'Baidyanath Local Guides',
+          description: 'Expert guides for pilgrimage tours to Baidyanath Dham and surrounding temples',
+          rating: 4.8,
+          reviewCount: 189,
+          specialties: ['Pilgrimage tours', 'Temple history', 'Local legends', 'Spiritual experiences'],
+          image: '/vendors/pilgrimage-guides.jpg'
+        }
+      ];
+    } else if (destination.location.address.includes('Hazaribagh')) {
+      return [
+        {
+          id: '1',
+          name: 'Hazaribagh Jungle Guides',
+          description: 'Local guides offering personalized wildlife tours in Hazaribagh National Park',
+          rating: 4.9,
+          reviewCount: 210,
+          specialties: ['Wildlife tours', 'Bird watching', 'Nature walks', 'Tribal village visits'],
+          image: '/vendors/guides.jpg'
+        }
+      ];
+    } else if (destination.location.address.includes('Jamshedpur')) {
+      return [
+        {
+          id: '1',
+          name: 'Jamshedpur Steel Art',
+          description: 'Unique metal crafts made from recycled steel inspired by Tata Steel heritage',
+          rating: 4.7,
+          reviewCount: 156,
+          specialties: ['Metal sculptures', 'Steel crafts', 'Industrial art', 'Home decor'],
+          image: '/vendors/metal-crafts.jpg'
+        }
+      ];
+    } else if (destination.location.address.includes('Dhanbad')) {
+      return [
+        {
+          id: '1',
+          name: 'Dhanbad Mining Heritage',
+          description: 'Local guides offering tours of coal mines and mining heritage sites',
+          rating: 4.6,
+          reviewCount: 98,
+          specialties: ['Mining tours', 'Historical sites', 'Local history', 'Industrial heritage'],
+          image: '/vendors/mining.jpg'
+        }
+      ];
+    } else if (destination.location.address.includes('Netarhat')) {
+      return [
+        {
+          id: '1',
+          name: 'Netarhat Hill Farmers',
+          description: 'Organic produce and local delicacies from the hills of Netarhat',
+          rating: 4.6,
+          reviewCount: 98,
+          specialties: ['Organic honey', 'Hill vegetables', 'Local teas', 'Handmade preserves'],
+          image: '/vendors/farmers.jpg'
+        }
+      ];
+    } else if (destination.location.address.includes('Latehar')) {
+      return [
+        {
+          id: '1',
+          name: 'Latehar Tribal Guides',
+          description: 'Local guides offering tours of tribal villages and cultural sites',
+          rating: 4.7,
+          reviewCount: 112,
+          specialties: ['Tribal village tours', 'Cultural experiences', 'Local crafts', 'Traditional music'],
+          image: '/vendors/tribal-guides.jpg'
+        }
+      ];
+    } else if (destination.location.address.includes('Giridih')) {
+      return [
+        {
+          id: '1',
+          name: 'Parasnath Trek Guides',
+          description: 'Expert guides for trekking and pilgrimage tours to Parasnath Hill',
+          rating: 4.8,
+          reviewCount: 145,
+          specialties: ['Trekking tours', 'Pilgrimage guidance', 'Jain history', 'Mountain trails'],
+          image: '/vendors/trek-guides.jpg'
+        }
+      ];
+    } else if (destination.location.address.includes('Ramgarh')) {
+      return [
+        {
+          id: '1',
+          name: 'Ramgarh Valley Guides',
+          description: 'Local guides offering tours of Patratu Valley and surrounding attractions',
+          rating: 4.6,
+          reviewCount: 87,
+          specialties: ['Valley tours', 'Dam visits', 'Scenic spots', 'Local history'],
+          image: '/vendors/valley-guides.jpg'
+        }
+      ];
+    } else if (destination.location.address.includes('Koderma')) {
+      return [
+        {
+          id: '1',
+          name: 'Koderma Gem Traders',
+          description: 'Local traders specializing in mica and gemstone products',
+          rating: 4.5,
+          reviewCount: 76,
+          specialties: ['Mica crafts', 'Gemstone jewelry', 'Local minerals', 'Traditional crafts'],
+          image: '/vendors/gem-traders.jpg'
+        }
+      ];
+    }
+    
+    // Default vendors if no specific location match
+    return [
+      {
+        id: '1',
+        name: 'Local Handicrafts',
+        description: 'Authentic local handicrafts and souvenirs made by regional artisans',
+        rating: 4.8,
+        reviewCount: 124,
+        specialties: ['Wooden crafts', 'Textiles', 'Jewelry', 'Pottery'],
+        image: '/vendors/local-crafts.jpg'
+      },
+      {
+        id: '2',
+        name: 'Regional Guides',
+        description: 'Local guides offering personalized tours of natural and cultural sites',
+        rating: 4.9,
+        reviewCount: 210,
+        specialties: ['Sightseeing', 'Cultural tours', 'Nature walks', 'Historical sites'],
+        image: '/vendors/regional-guides.jpg'
+      }
+    ];
+  };
+
+  const localVendors = getLocalVendors();
+
+  // Check if this is a Jharkhand destination
+  const isJharkhandDestination = destination.location.address.includes('Jharkhand');
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -45,6 +220,39 @@ export default function DestinationDetailPage({ params }: DestinationDetailPageP
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
+  }
+
+  // Show skeleton while loading to prevent hydration issues
+  if (!isClient) {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <div className="h-96 bg-gray-200 animate-pulse"></div>
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2 space-y-8">
+              <div className="bg-white rounded-xl p-8">
+                <div className="h-8 bg-gray-200 rounded w-3/4 mb-6 animate-pulse"></div>
+                <div className="space-y-4">
+                  <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                  <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                  <div className="h-4 bg-gray-200 rounded animate-pulse w-5/6"></div>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <div className="bg-white rounded-xl p-6">
+                <div className="h-6 bg-gray-200 rounded w-1/2 mb-4 animate-pulse"></div>
+                <div className="space-y-3">
+                  <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                  <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+                  <div className="h-4 bg-gray-200 rounded animate-pulse w-3/4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -73,6 +281,11 @@ export default function DestinationDetailPage({ params }: DestinationDetailPageP
               {destination.featured && (
                 <span className="bg-yellow-400/90 text-yellow-900 px-3 py-1 rounded-full text-sm font-medium">
                   Featured
+                </span>
+              )}
+              {isJharkhandDestination && (
+                <span className="bg-green-500/90 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  🌿 Jharkhand
                 </span>
               )}
             </div>
@@ -189,6 +402,61 @@ export default function DestinationDetailPage({ params }: DestinationDetailPageP
               </Card>
             </motion.div>
 
+            {/* Local Vendors Section for Jharkhand Destinations */}
+            {isJharkhandDestination && (
+              <motion.div variants={itemVariants}>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Support Local Vendors</h2>
+                <p className="text-gray-600 mb-6">
+                  When you visit Jharkhand, you're not just experiencing natural beauty and culture - you're also supporting local communities. 
+                  These local vendors offer authentic products and services that help sustain the local economy.
+                </p>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {localVendors.map((vendor) => (
+                    <Card key={vendor.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                      <div className="h-40 bg-gradient-to-r from-green-400 to-blue-500 relative">
+                        <div className="absolute inset-0 bg-black/10" />
+                        <div className="absolute bottom-4 left-4">
+                          <h3 className="text-white font-bold text-lg">{vendor.name}</h3>
+                        </div>
+                      </div>
+                      <div className="p-4">
+                        <p className="text-gray-600 text-sm mb-3">{vendor.description}</p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center">
+                            <Star className="w-4 h-4 text-yellow-400 fill-current mr-1" />
+                            <span className="font-medium">{vendor.rating}</span>
+                            <span className="text-gray-500 text-sm ml-1">({vendor.reviewCount})</span>
+                          </div>
+                          <Button variant="outline" size="sm">View Profile</Button>
+                        </div>
+                        <div className="mt-3">
+                          <p className="text-xs text-gray-500 mb-1">Specialties:</p>
+                          <div className="flex flex-wrap gap-1">
+                            {vendor.specialties.map((specialty, index) => (
+                              <span key={index} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                {specialty}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+                <Card className="mt-6 p-6 bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Support Local Communities</h3>
+                  <p className="text-gray-600 mb-4">
+                    By choosing local vendors, you're directly contributing to the economic empowerment of Jharkhand's communities. 
+                    Your purchases help preserve traditional crafts and support families who have been practicing these skills for generations.
+                  </p>
+                  <div className="flex items-center text-green-700">
+                    <Heart className="w-5 h-5 mr-2" />
+                    <span className="font-medium">Thank you for supporting sustainable tourism!</span>
+                  </div>
+                </Card>
+              </motion.div>
+            )}
+
             {/* Available Tours */}
             {relatedTours.length > 0 && (
               <motion.div variants={itemVariants}>
@@ -270,6 +538,12 @@ export default function DestinationDetailPage({ params }: DestinationDetailPageP
                     <div className="flex justify-between">
                       <span className="text-gray-600">Status:</span>
                       <span className="font-medium text-yellow-600">Featured</span>
+                    </div>
+                  )}
+                  {isJharkhandDestination && (
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Region:</span>
+                      <span className="font-medium text-green-600">Jharkhand</span>
                     </div>
                   )}
                 </div>

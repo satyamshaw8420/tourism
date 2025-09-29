@@ -1,5 +1,4 @@
 'use client'
-'use client'
 
 import { useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
@@ -8,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { sampleDestinations } from '@/data/sample-data'
 import Link from 'next/link'
+import Image from 'next/image'
 
 function Interactive3DCard({ destination, isActive }: { destination: any, isActive: boolean }) {
   const x = useMotionValue(0)
@@ -53,11 +53,17 @@ function Interactive3DCard({ destination, isActive }: { destination: any, isActi
         {/* Image Background */}
         <div className="absolute inset-0 h-64">
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10"></div>
-          <img
-            src={destination.image}
-            alt={destination.name}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
+          <div className="w-full h-full relative">
+            <Image
+              src={destination.image}
+              alt={destination.name}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              onError={(e) => {
+                console.error(`Failed to load image for ${destination.name}:`, destination.image);
+              }}
+            />
+          </div>
         </div>
         
         {/* Content Overlay */}
@@ -126,7 +132,26 @@ export default function DestinationsShowcase() {
   const [activeCategory, setActiveCategory] = useState('all')
   
   const categories = ['all', 'beach', 'mountain', 'heritage', 'adventure', 'city']
-  const featuredDestinations = sampleDestinations.filter(d => d.featured).slice(0, 6)
+  
+  // Get featured destinations (first 6 featured ones)
+  let featuredDestinations = sampleDestinations.filter(d => d.featured).slice(0, 6)
+  
+  // Ensure we have some Jharkhand destinations in the featured list
+  const jharkhandDestinations = sampleDestinations.filter(d => 
+    d.location.address.includes('Jharkhand') && d.featured
+  )
+  
+  // If we don't have enough Jharkhand destinations in featured, add some
+  if (jharkhandDestinations.length > 0) {
+    // Replace some of the existing featured destinations with Jharkhand ones
+    const nonJharkhandFeatured = featuredDestinations.filter(d => 
+      !d.location.address.includes('Jharkhand')
+    )
+    
+    // Add at least 2 Jharkhand destinations to the featured list
+    const jharkhandToAdd = jharkhandDestinations.slice(0, 2)
+    featuredDestinations = [...jharkhandToAdd, ...nonJharkhandFeatured].slice(0, 6)
+  }
   
   const filteredDestinations = activeCategory === 'all' 
     ? featuredDestinations 

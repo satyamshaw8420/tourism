@@ -57,11 +57,11 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
       })
       setHasInitialized(true)
     }
-  }, [isOpen, messages.length, hasInitialized, addMessage])
+  }, [isOpen, messages.length, hasInitialized])
 
-  const handleSendMessage = async (message: string) => {
+  const handleSendMessage = (message: string) => {
     if (!message.trim()) return
-    await sendMessage(message.trim())
+    sendMessage(message.trim())
     setInputValue('')
   }
 
@@ -135,7 +135,7 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
                             ? 'bg-blue-600 text-white' 
                             : 'bg-white border shadow-sm'
                         }`}>
-                          <p className="text-sm">{message.message}</p>
+                          <p className="text-sm">{message.message || 'No message content'}</p>
                         </div>
                         
                         {/* Tour recommendations */}
@@ -146,7 +146,7 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
                                 <div className="flex justify-between items-start mb-2">
                                   <h4 className="font-medium text-gray-900 text-sm">{tour.title}</h4>
                                   <div className="text-right">
-                                    <div className="text-green-600 font-bold text-sm">₹{tour.price.toLocaleString()}</div>
+                                    <div className="text-green-600 font-bold text-sm">₹{tour.price?.toLocaleString() || 'N/A'}</div>
                                     <div className="text-xs text-gray-500">per person</div>
                                   </div>
                                 </div>
@@ -154,15 +154,15 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
                                 <div className="flex items-center justify-between text-xs text-gray-500 mb-2">
                                   <span className="flex items-center">
                                     <MapPin className="w-3 h-3 mr-1" />
-                                    {tour.destination.name}
+                                    {tour.destination?.name || 'Unknown destination'}
                                   </span>
                                   <span className="flex items-center">
                                     <Calendar className="w-3 h-3 mr-1" />
-                                    {tour.duration} days
+                                    {tour.duration || 0} days
                                   </span>
                                   <span className="flex items-center">
                                     <Star className="w-3 h-3 mr-1 text-yellow-400" />
-                                    {tour.rating}
+                                    {tour.rating || 0}
                                   </span>
                                 </div>
                                 
@@ -187,7 +187,7 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
                                 onClick={() => handleQuickAction(action)}
                                 className="text-xs bg-white hover:bg-blue-50 border-blue-200 text-blue-600"
                               >
-                                {action}
+                                {action || 'Unknown action'}
                               </Button>
                             ))}
                           </div>
@@ -212,8 +212,8 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
                     </div>
                   </div>
                 )}
+                <div ref={messagesEndRef} />
               </div>
-              <div ref={messagesEndRef} />
             </div>
 
             {/* Input */}

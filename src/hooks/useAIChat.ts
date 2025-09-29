@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useCallback, useRef } from 'react'
-import { AIQuery, AIResponse, TourPackage } from '@/types'
-import { sampleDestinations, sampleTourPackages } from '@/data/sample-data'
+import { AIResponse, TourPackage } from '@/types'
+import { sampleTourPackages } from '@/data/sample-data'
 
 interface ChatMessage {
   id: string
@@ -25,14 +25,24 @@ interface UseChatOptions {
   onRecommendation?: (tours: TourPackage[]) => void
 }
 
+interface UserContext {
+  preferences?: string[]
+  pastBookings?: string[]
+  budgetRange?: { min: number; max: number }
+}
+
+interface EntityData {
+  budget?: number
+  duration?: number
+  groupSize?: number
+}
+
 // Advanced AI response logic with context awareness
 const getAdvancedAIResponse = (
   query: string, 
-  chatHistory: ChatMessage[] = [],
-  userContext?: any
+  chatHistory: ChatMessage[] = []
 ): AIResponse => {
   const lowerQuery = query.toLowerCase()
-  const lastAIMessage = chatHistory.filter(m => m.type === 'ai').pop()
   
   // Extract intent and entities from query
   const intent = detectIntent(lowerQuery)
@@ -55,13 +65,13 @@ const getAdvancedAIResponse = (
       return handleActivityPreference(entities, lowerQuery)
     
     case 'comparison_request':
-      return handleComparison(entities, lowerQuery)
+      return handleComparison()
     
     case 'booking_assistance':
-      return handleBookingAssistance(entities, lowerQuery)
+      return handleBookingAssistance()
     
     default:
-      return handleGeneralInquiry(lowerQuery)
+      return handleGeneralInquiry()
   }
 }
 
@@ -92,13 +102,13 @@ const detectIntent = (query: string): string => {
 }
 
 // Entity extraction
-const extractEntities = (query: string) => {
-  const entities: any = {}
+const extractEntities = (query: string): EntityData => {
+  const entities: EntityData = {}
   
   // Budget extraction
   const budgetMatch = query.match(/(\d+k?|\d+,\d+|\d+\s*thousand|\d+\s*lakh)/i)
   if (budgetMatch) {
-    let budget = budgetMatch[1].toLowerCase()
+    const budget = budgetMatch[1].toLowerCase()
     if (budget.includes('k')) {
       entities.budget = parseInt(budget) * 1000
     } else if (budget.includes('thousand')) {
@@ -128,9 +138,17 @@ const extractEntities = (query: string) => {
 }
 
 // Intent handlers
-const handleBudgetInquiry = (entities: any, query: string): AIResponse => {
+const handleBudgetInquiry = (entities: EntityData, query: string): AIResponse => {
   const budget = entities.budget || (query.includes('cheap') ? 20000 : 50000)
   const tours = sampleTourPackages.filter(tour => tour.price <= budget).slice(0, 4)
+  
+  // If no tours found within budget, fallback to featured tours
+  if (tours.length === 0) {
+    return {
+      message: `💰 I couldn't find any tours within your budget of ₹${budget.toLocaleString()}, but here are some popular options:`,
+      recommendations: sampleTourPackages.filter(tour => tour.featured).slice(0, 3)
+    }
+  }
   
   return {
     message: `💰 I found some excellent options within your budget of ₹${budget.toLocaleString()}! These tours offer great value for money:`,
@@ -138,7 +156,7 @@ const handleBudgetInquiry = (entities: any, query: string): AIResponse => {
   }
 }
 
-const handleDestinationPreference = (entities: any, query: string): AIResponse => {
+const handleDestinationPreference = (entities: EntityData, query: string): AIResponse => {
   let category = 'beach'
   let message = '🏖️ Beach destinations are perfect for relaxation!'
   
@@ -151,23 +169,42 @@ const handleDestinationPreference = (entities: any, query: string): AIResponse =
   } else if (query.includes('city') || query.includes('urban')) {
     category = 'city'
     message = '🏙️ Urban experiences and city life!'
+  } else if (query.includes('adventure')) {
+    category = 'adventure'
+    message = '🎯 Adventure and thrill-seeking experiences!'
   }
   
   const tours = sampleTourPackages.filter(tour => 
     tour.destination.category === category
   )
   
+  // If no tours found for the category, fallback to featured tours
+  if (tours.length === 0) {
+    return {
+      message: `${message} Here are some popular destinations:`,
+      recommendations: sampleTourPackages.filter(tour => tour.featured).slice(0, 3)
+    }
+  }
+  
   return {
     message: `${message} Here are some amazing ${category} destinations:`,
-    recommendations: tours
+    recommendations: tours.slice(0, 3)
   }
 }
 
-const handleGroupPlanning = (entities: any, query: string): AIResponse => {
+const handleGroupPlanning = (entities: EntityData, query: string): AIResponse => {
   const groupSize = entities.groupSize || 8
   const tours = sampleTourPackages.filter(tour => 
     tour.maxGroupSize >= groupSize && tour.minGroupSize <= groupSize
   ).slice(0, 3)
+  
+  // If no tours found for the group size, fallback to featured tours
+  if (tours.length === 0) {
+    return {
+      message: `👥 I couldn't find specific tours for a group of ${groupSize} people, but here are some popular options:`,
+      recommendations: sampleTourPackages.filter(tour => tour.featured).slice(0, 3)
+    }
+  }
   
   return {
     message: `👥 Perfect for group travel! I found tours that accommodate ${groupSize} people with great group activities and shared experiences:`,
@@ -175,11 +212,19 @@ const handleGroupPlanning = (entities: any, query: string): AIResponse => {
   }
 }
 
-const handleDurationQuery = (entities: any, query: string): AIResponse => {
+const handleDurationQuery = (entities: EntityData, query: string): AIResponse => {
   const duration = entities.duration || (query.includes('weekend') ? 3 : 7)
   const tours = sampleTourPackages.filter(tour => 
     Math.abs(tour.duration - duration) <= 2
   ).slice(0, 3)
+  
+  // If no tours found for the duration, fallback to featured tours
+  if (tours.length === 0) {
+    return {
+      message: `⏰ I couldn't find specific tours for a ${duration}-day trip, but here are some popular options:`,
+      recommendations: sampleTourPackages.filter(tour => tour.featured).slice(0, 3)
+    }
+  }
   
   return {
     message: `⏰ Found some great ${duration}-day trips that fit your timeline perfectly:`,
@@ -187,7 +232,7 @@ const handleDurationQuery = (entities: any, query: string): AIResponse => {
   }
 }
 
-const handleActivityPreference = (entities: any, query: string): AIResponse => {
+const handleActivityPreference = (entities: EntityData, query: string): AIResponse => {
   let message = ''
   let tours: TourPackage[] = []
   
@@ -208,6 +253,10 @@ const handleActivityPreference = (entities: any, query: string): AIResponse => {
     tours = sampleTourPackages.filter(tour => 
       tour.destination.category === 'heritage'
     )
+  } else {
+    // Default case when no specific activity preference is detected
+    message = '🌟 Here are some popular tours based on your interests:'
+    tours = sampleTourPackages.filter(tour => tour.featured).slice(0, 3)
   }
   
   return {
@@ -216,7 +265,7 @@ const handleActivityPreference = (entities: any, query: string): AIResponse => {
   }
 }
 
-const handleComparison = (entities: any, query: string): AIResponse => {
+const handleComparison = (): AIResponse => {
   // Simple comparison logic - can be enhanced
   const tours = sampleTourPackages.slice(0, 2)
   return {
@@ -225,14 +274,14 @@ const handleComparison = (entities: any, query: string): AIResponse => {
   }
 }
 
-const handleBookingAssistance = (entities: any, query: string): AIResponse => {
+const handleBookingAssistance = (): AIResponse => {
   return {
     message: '📋 I\'d be happy to help you with booking! Here are some popular tours you might be interested in. Click "View Details" on any tour to proceed with booking:',
     recommendations: sampleTourPackages.filter(tour => tour.featured).slice(0, 3)
   }
 }
 
-const handleGeneralInquiry = (query: string): AIResponse => {
+const handleGeneralInquiry = (): AIResponse => {
   return {
     message: '🌟 I\'m here to help you plan the perfect trip! Here are some popular destinations to get you started:',
     recommendations: sampleTourPackages.filter(tour => tour.featured).slice(0, 3)
@@ -242,7 +291,7 @@ const handleGeneralInquiry = (query: string): AIResponse => {
 export const useAIChat = (options: UseChatOptions = {}) => {
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [isLoading, setIsLoading] = useState(false)
-  const [context, setContext] = useState<any>({})
+  const [context, setContext] = useState<UserContext>({})
   const messageIdCounter = useRef(1)
 
   const addMessage = useCallback((message: Omit<ChatMessage, 'id' | 'timestamp'>) => {
@@ -262,7 +311,7 @@ export const useAIChat = (options: UseChatOptions = {}) => {
     return newMessage
   }, [options])
 
-  const sendMessage = useCallback(async (message: string) => {
+  const sendMessage = useCallback((message: string) => {
     if (!message.trim()) return
 
     // Add user message
@@ -275,7 +324,9 @@ export const useAIChat = (options: UseChatOptions = {}) => {
 
     // Simulate AI processing delay
     setTimeout(() => {
-      const aiResponse = getAdvancedAIResponse(message, messages, context)
+      // Get current messages including the user message we just added
+      const currentMessages = [...messages, userMessage];
+      const aiResponse = getAdvancedAIResponse(message, currentMessages)
       
       addMessage({
         type: 'ai',
@@ -292,15 +343,15 @@ export const useAIChat = (options: UseChatOptions = {}) => {
       
       setIsLoading(false)
     }, 800 + Math.random() * 1200)
-  }, [messages, context, addMessage])
+  }, [messages, addMessage])
 
   const clearChat = useCallback(() => {
     setMessages([])
     messageIdCounter.current = 1
   }, [])
 
-  const updateContext = useCallback((newContext: any) => {
-    setContext(prev => ({ ...prev, ...newContext }))
+  const updateContext = useCallback((newContext: Partial<UserContext>) => {
+    setContext((prev) => ({ ...prev, ...newContext }))
   }, [])
 
   return {

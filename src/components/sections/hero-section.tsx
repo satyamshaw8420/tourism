@@ -8,8 +8,8 @@ import Link from 'next/link'
 import { useRef, useState } from 'react'
 
 // Dynamically import 3D components to avoid SSR issues
-const SimpleHighQualityGlobe = dynamic(() => import('@/components/3d/simple-high-quality-globe'), { ssr: false })
 const AnimatedAirplane = dynamic(() => import('@/components/3d/airplane'), { ssr: false })
+const Real3DEarth = dynamic(() => import('@/components/3d/real-3d-earth'), { ssr: false })
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -50,7 +50,7 @@ export default function HeroSection() {
     <motion.section 
       ref={ref}
       style={{ y, opacity }}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent"
     >
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -293,9 +293,9 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Enhanced Right Content - 3D Globe */}
+          {/* Enhanced Right Content - Real 3D Earth */}
           <motion.div 
-            className="relative h-96 lg:h-[600px]"
+            className="relative"
             variants={itemVariants}
           >
             <motion.div 
@@ -310,8 +310,8 @@ export default function HeroSection() {
                 ease: "linear"
               }}
             />
-            <div className="relative z-10 h-full">
-              <SimpleHighQualityGlobe />
+            <div className="relative z-20 h-96 lg:h-[600px]">
+              <Real3DEarth />
             </div>
             
             {/* Enhanced Floating Elements */}
@@ -411,7 +411,7 @@ export default function HeroSection() {
             <h3 className="text-2xl font-bold mb-4">Coming Soon!</h3>
             <p className="text-gray-600 mb-4">
               Our demo video is currently in production. Stay tuned for an amazing preview 
-              of how TravelTogether is revolutionizing group travel!
+              of how Travel-Ease is revolutionizing group travel!
             </p>
             <Button onClick={() => setShowVideo(false)}>Close</Button>
           </motion.div>

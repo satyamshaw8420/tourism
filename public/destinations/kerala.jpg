@@ -1,6 +1,0 @@
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="600" fill="#06b6d4"/>
-  <ellipse cx="400" cy="300" rx="300" ry="200" fill="#22d3ee"/>
-  <rect x="200" y="250" width="400" height="100" fill="#06b6d4" stroke="#0e7490" stroke-width="5"/>
-  <text x="400" y="310" font-family="Arial" font-size="48" fill="white" text-anchor="middle">Kerala</text>
-</svg>

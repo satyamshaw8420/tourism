@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Loading Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .image-container { margin: 20px 0; }
+        img { max-width: 300px; border: 1px solid #ccc; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Test</h1>
+    
+    <div class="image-container">
+        <h2>Agra Heritage Image</h2>
+        <img id="agra-image" src="/destinations/agra-heritage/agra-heritage-main-attraction.png" alt="Agra Heritage" onerror="handleError(this, 'Agra Heritage')">
+        <p id="agra-status">Loading...</p>
+    </div>
+    
+    <div class="image-container">
+        <h2>Goa Beaches Image</h2>
+        <img id="goa-image" src="/destinations/goa-beaches/goa.jpg" alt="Goa Beaches" onerror="handleError(this, 'Goa Beaches')">
+        <p id="goa-status">Loading...</p>
+    </div>
+    
+    <script>
+        function handleError(img, name) {
+            document.getElementById(name.toLowerCase().replace(' ', '-') + '-status').innerHTML = 
+                '<span class="error">❌ Failed to load ' + name + ' image</span>';
+        }
+        
+        // Check if images loaded successfully
+        window.onload = function() {
+            const agraImg = document.getElementById('agra-image');
+            const goaImg = document.getElementById('goa-image');
+            
+            if (agraImg.complete && agraImg.naturalHeight !== 0) {
+                document.getElementById('agra-status').innerHTML = 
+                    '<span class="success">✅ Agra Heritage image loaded successfully</span>';
+            }
+            
+            if (goaImg.complete && goaImg.naturalHeight !== 0) {
+                document.getElementById('goa-status').innerHTML = 
+                    '<span class="success">✅ Goa Beaches image loaded successfully</span>';
+            }
+        };
+    </script>
+</body>
+</html>

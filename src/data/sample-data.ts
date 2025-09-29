@@ -5,7 +5,7 @@ export const sampleDestinations: Destination[] = [
     id: '1',
     name: 'Goa Beaches',
     description: 'Experience the beautiful beaches and vibrant nightlife of Goa',
-    image: '/destinations/goa.jpg',
+    image: '/destinations/goa-beaches/goa.jpg',
     category: 'beach',
     location: {
       lat: 15.2993,
@@ -21,7 +21,7 @@ export const sampleDestinations: Destination[] = [
     id: '2',
     name: 'Himachal Pradesh',
     description: 'Explore the stunning mountains and valleys of Himachal Pradesh',
-    image: '/destinations/himachal.jpg',
+    image: '/destinations/himachal-pradesh/himachal-pradesh-main-attraction.jpg',
     category: 'mountain',
     location: {
       lat: 31.1048,
@@ -37,7 +37,7 @@ export const sampleDestinations: Destination[] = [
     id: '3',
     name: 'Rajasthan Heritage',
     description: 'Discover the royal heritage and magnificent palaces of Rajasthan',
-    image: '/destinations/rajasthan.jpg',
+    image: '/destinations/rajasthan-heritage/rajasthan-heritage-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 27.0238,
@@ -117,7 +117,7 @@ export const sampleDestinations: Destination[] = [
     id: '8',
     name: 'Agra Heritage',
     description: 'Marvel at the iconic Taj Mahal and Mughal architecture',
-    image: '/destinations/agra.jpg',
+    image: '/destinations/agra-heritage/agra-heritage-main-attraction.png',
     category: 'heritage',
     location: {
       lat: 27.1767,
@@ -256,6 +256,406 @@ export const sampleDestinations: Destination[] = [
     reviewCount: 1120,
     featured: false,
     createdAt: new Date('2024-01-16')
+  },
+  {
+    id: '17',
+    name: 'Dassam Falls',
+    description: 'A beautiful waterfall surrounded by forest, perfect for picnics and photography',
+    image: '/destinations/dassam-falls.jpg',
+    category: 'adventure',
+    location: {
+      lat: 23.3750,
+      lng: 85.4278,
+      address: 'Ranchi, Jharkhand, India'
+    },
+    rating: 4.7,
+    reviewCount: 890,
+    featured: true,
+    createdAt: new Date('2024-01-17')
+  },
+  {
+    id: '18',
+    name: 'Hundru Falls',
+    description: 'A 98-meter-high fall, famous as one of the most spectacular in Jharkhand',
+    image: '/destinations/hundru-falls/hundru-falls-main-attraction.jpg',
+    category: 'adventure',
+    location: {
+      lat: 23.3000,
+      lng: 85.3000,
+      address: 'Ranchi, Jharkhand, India'
+    },
+    rating: 4.8,
+    reviewCount: 1240,
+    featured: true,
+    createdAt: new Date('2024-01-18')
+  },
+  {
+    id: '19',
+    name: 'Jonha Falls',
+    description: 'Also called Gautamdhara, it has a Buddhist monastery nearby',
+    image: '/destinations/jonha-falls.jpg',
+    category: 'adventure',
+    location: {
+      lat: 23.4333,
+      lng: 85.4500,
+      address: 'Ranchi, Jharkhand, India'
+    },
+    rating: 4.6,
+    reviewCount: 780,
+    featured: true,
+    createdAt: new Date('2024-01-19')
+  },
+  {
+    id: '20',
+    name: 'Patratu Valley',
+    description: 'A winding valley with breathtaking hills, greenery, and a dam',
+    image: '/destinations/patratu-valley.jpg',
+    category: 'mountain',
+    location: {
+      lat: 23.6000,
+      lng: 85.3000,
+      address: 'Ramgarh, Jharkhand, India'
+    },
+    rating: 4.5,
+    reviewCount: 650,
+    featured: false,
+    createdAt: new Date('2024-01-20')
+  },
+  {
+    id: '21',
+    name: 'Netarhat',
+    description: 'Known as the "Queen of Chotanagpur," famous for sunrise and sunset views',
+    image: '/destinations/netarhat.jpg',
+    category: 'mountain',
+    location: {
+      lat: 23.5000,
+      lng: 84.6000,
+      address: 'Latehar, Jharkhand, India'
+    },
+    rating: 4.7,
+    reviewCount: 540,
+    featured: true,
+    createdAt: new Date('2024-01-21')
+  },
+  {
+    id: '22',
+    name: 'Dimna Lake',
+    description: 'A serene lake offering water sports and peaceful surroundings',
+    image: '/destinations/dimna-lake.jpg',
+    category: 'adventure',
+    location: {
+      lat: 22.8000,
+      lng: 86.2000,
+      address: 'Jamshedpur, Jharkhand, India'
+    },
+    rating: 4.4,
+    reviewCount: 420,
+    featured: false,
+    createdAt: new Date('2024-01-22')
+  },
+  {
+    id: '23',
+    name: 'Topchanchi Lake',
+    description: 'A tranquil artificial lake ideal for a local getaway',
+    image: '/destinations/topchanchi-lake.jpg',
+    category: 'adventure',
+    location: {
+      lat: 23.8000,
+      lng: 86.5000,
+      address: 'Dhanbad, Jharkhand, India'
+    },
+    rating: 4.3,
+    reviewCount: 380,
+    featured: false,
+    createdAt: new Date('2024-01-23')
+  },
+  {
+    id: '24',
+    name: 'Maithon Dam',
+    description: 'A huge dam on the Barakar River, popular for boating and nature',
+    image: '/destinations/maithon-dam.jpg',
+    category: 'adventure',
+    location: {
+      lat: 23.7833,
+      lng: 86.8167,
+      address: 'Dhanbad, Jharkhand, India'
+    },
+    rating: 4.5,
+    reviewCount: 460,
+    featured: false,
+    createdAt: new Date('2024-01-24')
+  },
+  {
+    id: '25',
+    name: 'Tilaiya Dam',
+    description: 'A peaceful dam surrounded by hills, great for nature lovers',
+    image: '/destinations/tilaiya-dam.jpg',
+    category: 'adventure',
+    location: {
+      lat: 24.3000,
+      lng: 85.5000,
+      address: 'Koderma, Jharkhand, India'
+    },
+    rating: 4.2,
+    reviewCount: 310,
+    featured: false,
+    createdAt: new Date('2024-01-25')
+  },
+  {
+    id: '26',
+    name: 'Betla National Park',
+    description: 'Home to tigers, elephants, and scenic forests',
+    image: '/destinations/betla-national-park.jpg',
+    category: 'adventure',
+    location: {
+      lat: 23.4167,
+      lng: 84.4500,
+      address: 'Latehar, Jharkhand, India'
+    },
+    rating: 4.8,
+    reviewCount: 920,
+    featured: true,
+    createdAt: new Date('2024-01-26')
+  },
+  {
+    id: '27',
+    name: 'Hazaribagh National Park',
+    description: 'Famous for wildlife safaris and forest drives',
+    image: '/destinations/hazaribagh-national-park.jpg',
+    category: 'adventure',
+    location: {
+      lat: 23.9833,
+      lng: 85.4000,
+      address: 'Hazaribagh, Jharkhand, India'
+    },
+    rating: 4.6,
+    reviewCount: 680,
+    featured: false,
+    createdAt: new Date('2024-01-27')
+  },
+  {
+    id: '28',
+    name: 'Dalma Wildlife Sanctuary',
+    description: 'Known for elephants, trekking trails, and scenic views',
+    image: '/destinations/dalma-wildlife.jpg',
+    category: 'adventure',
+    location: {
+      lat: 22.7000,
+      lng: 86.2000,
+      address: 'Jamshedpur, Jharkhand, India'
+    },
+    rating: 4.4,
+    reviewCount: 530,
+    featured: false,
+    createdAt: new Date('2024-01-28')
+  },
+  {
+    id: '29',
+    name: 'Baidyanath Dham',
+    description: 'A Jyotirlinga shrine and one of the holiest Hindu pilgrimage sites',
+    image: '/destinations/baidyanath-dham.jpg',
+    category: 'heritage',
+    location: {
+      lat: 24.4833,
+      lng: 86.7000,
+      address: 'Deoghar, Jharkhand, India'
+    },
+    rating: 4.9,
+    reviewCount: 1560,
+    featured: true,
+    createdAt: new Date('2024-01-29')
+  },
+  {
+    id: '30',
+    name: 'Parasnath Hill',
+    description: 'The most sacred Jain pilgrimage site with spiritual trekking trails',
+    image: '/destinations/parasnath-hill.jpg',
+    category: 'heritage',
+    location: {
+      lat: 23.7000,
+      lng: 86.1667,
+      address: 'Giridih, Jharkhand, India'
+    },
+    rating: 4.7,
+    reviewCount: 890,
+    featured: true,
+    createdAt: new Date('2024-01-30')
+  },
+  {
+    id: '31',
+    name: 'Pahari Mandir',
+    description: 'A hilltop Shiva temple offering a panoramic view of the city',
+    image: '/destinations/pahari-mandir.jpg',
+    category: 'heritage',
+    location: {
+      lat: 23.3500,
+      lng: 85.3333,
+      address: 'Ranchi, Jharkhand, India'
+    },
+    rating: 4.5,
+    reviewCount: 720,
+    featured: false,
+    createdAt: new Date('2024-01-31')
+  },
+  {
+    id: '32',
+    name: 'Jagannath Temple',
+    description: 'A 17th-century temple resembling Puri\'s Jagannath Temple',
+    image: '/destinations/jagannath-temple.jpg',
+    category: 'heritage',
+    location: {
+      lat: 23.3500,
+      lng: 85.3333,
+      address: 'Ranchi, Jharkhand, India'
+    },
+    rating: 4.6,
+    reviewCount: 680,
+    featured: false,
+    createdAt: new Date('2024-02-01')
+  },
+  {
+    id: '33',
+    name: 'Rajrappa Mandir',
+    description: 'A Shaktipeeth temple of Goddess Chhinnamastika at the confluence of two rivers',
+    image: '/destinations/rajrappa-mandir.jpg',
+    category: 'heritage',
+    location: {
+      lat: 23.7333,
+      lng: 85.5167,
+      address: 'Ramgarh, Jharkhand, India'
+    },
+    rating: 4.7,
+    reviewCount: 750,
+    featured: true,
+    createdAt: new Date('2024-02-02')
+  },
+  {
+    id: '34',
+    name: 'Ranchi City',
+    description: 'Known for waterfalls, temples, and local tribal culture',
+    image: '/destinations/ranchi-city/ranchi-city-main-attraction.jpg',
+    category: 'city',
+    location: {
+      lat: 23.3441,
+      lng: 85.3096,
+      address: 'Ranchi, Jharkhand, India'
+    },
+    rating: 4.5,
+    reviewCount: 1200,
+    featured: true,
+    createdAt: new Date('2024-02-03')
+  },
+  {
+    id: '35',
+    name: 'Jamshedpur',
+    description: 'Famous for Jubilee Park, Dimna Lake, and Tata Steel heritage',
+    image: '/destinations/jamshedpur.jpg',
+    category: 'city',
+    location: {
+      lat: 22.8000,
+      lng: 86.2000,
+      address: 'Jamshedpur, Jharkhand, India'
+    },
+    rating: 4.4,
+    reviewCount: 980,
+    featured: false,
+    createdAt: new Date('2024-02-04')
+  },
+  {
+    id: '36',
+    name: 'Dhanbad City',
+    description: 'Popular for Maithon Dam, Topchanchi Lake, and mining tours',
+    image: '/destinations/dhanbad.jpg',
+    category: 'city',
+    location: {
+      lat: 23.7833,
+      lng: 86.8167,
+      address: 'Dhanbad, Jharkhand, India'
+    },
+    rating: 4.2,
+    reviewCount: 650,
+    featured: false,
+    createdAt: new Date('2024-02-05')
+  },
+  {
+    id: '37',
+    name: 'Hazaribagh Town',
+    description: 'Known for its national park, scenic hills, and local markets',
+    image: '/destinations/hazaribagh-town.jpg',
+    category: 'city',
+    location: {
+      lat: 23.9833,
+      lng: 85.4000,
+      address: 'Hazaribagh, Jharkhand, India'
+    },
+    rating: 4.3,
+    reviewCount: 520,
+    featured: false,
+    createdAt: new Date('2024-02-06')
+  },
+  {
+    id: '38',
+    name: 'Giridih Town',
+    description: 'Famous for Parasnath Hills and surrounding forests',
+    image: '/destinations/giridih-town.jpg',
+    category: 'city',
+    location: {
+      lat: 24.1833,
+      lng: 86.3167,
+      address: 'Giridih, Jharkhand, India'
+    },
+    rating: 4.1,
+    reviewCount: 480,
+    featured: false,
+    createdAt: new Date('2024-02-07')
+  },
+  {
+    id: '39',
+    name: 'Deoghar Town',
+    description: 'Famous for Baidyanath Dham, temples, and sweets like peda',
+    image: '/destinations/deoghar-town.jpg',
+    category: 'city',
+    location: {
+      lat: 24.4833,
+      lng: 86.7000,
+      address: 'Deoghar, Jharkhand, India'
+    },
+    rating: 4.6,
+    reviewCount: 890,
+    featured: false,
+    createdAt: new Date('2024-02-08')
+  },
+  {
+    id: '40',
+    name: 'Chaibasa',
+    description: 'Known for tribal culture and natural surroundings',
+    image: '/destinations/chaibasa.jpg',
+    category: 'city',
+    location: {
+      lat: 22.5833,
+      lng: 85.8167,
+      address: 'West Singhbhum, Jharkhand, India'
+    },
+    rating: 4.0,
+    reviewCount: 420,
+    featured: false,
+    createdAt: new Date('2024-02-09')
+  },
+  {
+    id: '41',
+    name: 'Palamu Fort',
+    description: 'A historic fort inside Betla National Park',
+    image: '/destinations/palamu-fort.jpg',
+    category: 'heritage',
+    location: {
+      lat: 24.0000,
+      lng: 84.3333,
+      address: 'Daltonganj, Jharkhand, India'
+    },
+    rating: 4.3,
+    reviewCount: 350,
+    featured: false,
+    createdAt: new Date('2024-02-10')
   }
 ]
 
@@ -532,6 +932,299 @@ export const sampleTourPackages: TourPackage[] = [
     reviewCount: 367,
     featured: false,
     createdAt: new Date('2024-01-06')
+  },
+  {
+    id: '7',
+    title: 'Jharkhand Waterfall Adventure - 5 Days',
+    description: 'Explore the majestic waterfalls of Jharkhand including Hundru, Dassam, and Jonha Falls with local guides',
+    images: ['/tours/jharkhand-1.jpg', '/tours/jharkhand-2.jpg', '/tours/jharkhand-3.jpg'],
+    destination: sampleDestinations[17], // Hundru Falls
+    duration: 5,
+    price: 22000,
+    originalPrice: 25000,
+    maxGroupSize: 15,
+    minGroupSize: 4,
+    inclusions: [
+      'Accommodation for 4 nights',
+      'All meals',
+      'Local guide services',
+      'Transportation between waterfalls',
+      'Entry fees to all attractions'
+    ],
+    exclusions: [
+      'Personal expenses',
+      'Travel insurance',
+      'Tips for guides'
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: 'Arrival in Ranchi',
+        description: 'Arrive in Ranchi and check into hotel. Evening city tour and local dinner',
+        activities: ['Airport pickup', 'Hotel check-in', 'City tour', 'Local dinner'],
+        meals: ['dinner']
+      },
+      {
+        day: 2,
+        title: 'Hundru Falls & Panch Gagh Falls',
+        description: 'Visit the majestic Hundru Falls and Panch Gagh Falls with picnic lunch',
+        activities: ['Hundru Falls visit', 'Panch Gagh Falls', 'Photography', 'Picnic lunch'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Ranchi Hotel'
+      },
+      {
+        day: 3,
+        title: 'Dassam Falls & Jonha Falls',
+        description: 'Explore the famous Dassam Falls and scenic Jonha Falls',
+        activities: ['Dassam Falls tour', 'Jonha Falls visit', 'Local tribal interaction', 'Cultural program'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Ranchi Hotel'
+      },
+      {
+        day: 4,
+        title: 'Tagore Hill & Local Sightseeing',
+        description: 'Visit Tagore Hill and explore local markets and cultural sites',
+        activities: ['Tagore Hill visit', 'Local market tour', 'Handicraft shopping', 'Cultural museum'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Ranchi Hotel'
+      },
+      {
+        day: 5,
+        title: 'Departure',
+        description: 'Final morning at leisure, check-out and departure',
+        activities: ['Leisure time', 'Shopping', 'Check-out', 'Airport drop'],
+        meals: ['breakfast']
+      }
+    ],
+    availability: [
+      new Date('2024-11-15'),
+      new Date('2024-12-10'),
+      new Date('2025-01-20')
+    ],
+    rating: 4.8,
+    reviewCount: 187,
+    featured: true,
+    createdAt: new Date('2024-01-07')
+  },
+  {
+    id: '8',
+    title: 'Jharkhand Wildlife Safari - 4 Days',
+    description: 'Experience the rich wildlife of Jharkhand in Betla and Hazaribagh National Parks',
+    images: ['/tours/jharkhand-wildlife-1.jpg', '/tours/jharkhand-wildlife-2.jpg'],
+    destination: sampleDestinations[25], // Betla National Park
+    duration: 4,
+    price: 18000,
+    maxGroupSize: 12,
+    minGroupSize: 4,
+    inclusions: [
+      'Hotel accommodation',
+      'All meals',
+      'Safari jeep charges',
+      'Park entry fees',
+      'Expert wildlife guide'
+    ],
+    exclusions: [
+      'Personal expenses',
+      'Camera fees',
+      'Optional excursions'
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: 'Arrival in Ranchi and Transfer to Betla',
+        description: 'Arrive in Ranchi, transfer to Betla National Park',
+        activities: ['Airport pickup', 'Scenic drive to Betla', 'Check-in at resort'],
+        meals: ['dinner'],
+        accommodation: 'Jungle Resort'
+      },
+      {
+        day: 2,
+        title: 'Betla National Park Safari',
+        description: 'Full day wildlife safari in Betla National Park',
+        activities: ['Morning jeep safari', 'Elephant safari', 'Nature walk', 'Bird watching'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Jungle Resort'
+      },
+      {
+        day: 3,
+        title: 'Hazaribagh National Park',
+        description: 'Drive to Hazaribagh and explore the national park',
+        activities: ['Drive to Hazaribagh', 'Afternoon safari', 'Visit local tribal village'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Hazaribagh Resort'
+      },
+      {
+        day: 4,
+        title: 'Dalma Wildlife Sanctuary & Departure',
+        description: 'Morning visit to Dalma Sanctuary and departure',
+        activities: ['Dalma Sanctuary visit', 'Check-out', 'Drive to Ranchi', 'Airport drop'],
+        meals: ['breakfast', 'lunch']
+      }
+    ],
+    availability: [
+      new Date('2024-11-20'),
+      new Date('2024-12-15'),
+      new Date('2025-01-25')
+    ],
+    rating: 4.7,
+    reviewCount: 142,
+    featured: true,
+    createdAt: new Date('2024-01-08')
+  },
+  {
+    id: '9',
+    title: 'Jharkhand Pilgrimage Tour - 6 Days',
+    description: 'Visit the holiest pilgrimage sites of Jharkhand including Baidyanath Dham and Parasnath Hill',
+    images: ['/tours/jharkhand-pilgrimage-1.jpg', '/tours/jharkhand-pilgrimage-2.jpg'],
+    destination: sampleDestinations[28], // Parasnath Hill
+    duration: 6,
+    price: 25000,
+    originalPrice: 28000,
+    maxGroupSize: 20,
+    minGroupSize: 6,
+    inclusions: [
+      'Hotel accommodation for 5 nights',
+      'All meals (vegetarian)',
+      'Transportation between cities',
+      'Temple entry fees',
+      'Local guide services'
+    ],
+    exclusions: [
+      'Personal expenses',
+      'Donations at temples',
+      'Travel insurance'
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: 'Arrival in Ranchi',
+        description: 'Arrive in Ranchi and visit Pahari Mandir for evening aarti',
+        activities: ['Airport pickup', 'Check-in at hotel', 'Visit Pahari Mandir', 'Evening aarti'],
+        meals: ['dinner'],
+        accommodation: 'Ranchi Hotel'
+      },
+      {
+        day: 2,
+        title: 'Ranchi Local Sightseeing',
+        description: 'Visit local temples and waterfalls in Ranchi',
+        activities: ['Dassam Falls', 'Jagannath Temple', 'Sun Temple', 'Local market'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Ranchi Hotel'
+      },
+      {
+        day: 3,
+        title: 'Drive to Deoghar & Baidyanath Dham',
+        description: 'Drive to Deoghar and visit the holy Baidyanath Dham',
+        activities: ['Drive to Deoghar (6-7 hours)', 'Check-in at hotel', 'Evening visit to Baidyanath Temple'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Deoghar Hotel'
+      },
+      {
+        day: 4,
+        title: 'Baidyanath Dham Darshan',
+        description: 'Full day darshan of Baidyanath Dham and surrounding temples',
+        activities: ['Morning rituals', 'Temple darshan', 'Visit Baba Bhandari Temple', 'Local sightseeing'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Deoghar Hotel'
+      },
+      {
+        day: 5,
+        title: 'Drive to Giridih & Parasnath Hill',
+        description: 'Drive to Giridih and trek to Parasnath Hill',
+        activities: ['Drive to Giridih', 'Check-in at hotel', 'Evening trek to Parasnath Hill base'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Giridih Hotel'
+      },
+      {
+        day: 6,
+        title: 'Parasnath Hill Trek & Departure',
+        description: 'Early morning trek to Parasnath Hill and departure',
+        activities: ['Early morning trek to temple', 'Darshan at Parasnath Temple', 'Drive to Ranchi', 'Airport drop'],
+        meals: ['breakfast', 'lunch']
+      }
+    ],
+    availability: [
+      new Date('2024-11-10'),
+      new Date('2024-12-05'),
+      new Date('2025-01-15')
+    ],
+    rating: 4.9,
+    reviewCount: 210,
+    featured: true,
+    createdAt: new Date('2024-01-09')
+  },
+  {
+    id: '10',
+    title: 'Jharkhand Cultural & City Tour - 5 Days',
+    description: 'Explore the cultural heritage and major cities of Jharkhand',
+    images: ['/tours/jharkhand-cultural-1.jpg', '/tours/jharkhand-cultural-2.jpg'],
+    destination: sampleDestinations[33], // Ranchi City
+    duration: 5,
+    price: 20000,
+    maxGroupSize: 15,
+    minGroupSize: 5,
+    inclusions: [
+      'Hotel accommodation for 4 nights',
+      'All meals',
+      'Transportation between cities',
+      'Local guide services',
+      'Entry fees to attractions'
+    ],
+    exclusions: [
+      'Personal expenses',
+      'Shopping',
+      'Travel insurance'
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: 'Arrival in Ranchi',
+        description: 'Arrive in Ranchi and explore the city',
+        activities: ['Airport pickup', 'Check-in at hotel', 'City tour', 'Visit Ranchi Hill', 'Evening at local market'],
+        meals: ['dinner'],
+        accommodation: 'Ranchi Hotel'
+      },
+      {
+        day: 2,
+        title: 'Ranchi Waterfalls & Temples',
+        description: 'Visit famous waterfalls and temples around Ranchi',
+        activities: ['Hundru Falls', 'Dassam Falls', 'Jonha Falls', 'Pahari Mandir', 'Jagannath Temple'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Ranchi Hotel'
+      },
+      {
+        day: 3,
+        title: 'Drive to Jamshedpur',
+        description: 'Drive to Jamshedpur, the steel city of India',
+        activities: ['Drive to Jamshedpur', 'Visit Tata Steel Plant', 'Dimna Lake', 'Jubilee Park'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Jamshedpur Hotel'
+      },
+      {
+        day: 4,
+        title: 'Jamshedpur & Drive to Dhanbad',
+        description: 'Explore Jamshedpur and drive to Dhanbad',
+        activities: ['Tata Museum', 'Local market shopping', 'Drive to Dhanbad', 'Evening at Topchanchi Lake'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Dhanbad Hotel'
+      },
+      {
+        day: 5,
+        title: 'Dhanbad Local Sightseeing & Departure',
+        description: 'Visit local attractions and departure',
+        activities: ['Maithon Dam', 'Local coal mine visit', 'Check-out', 'Drive to airport', 'Departure'],
+        meals: ['breakfast', 'lunch']
+      }
+    ],
+    availability: [
+      new Date('2024-11-05'),
+      new Date('2024-12-01'),
+      new Date('2025-01-10')
+    ],
+    rating: 4.6,
+    reviewCount: 175,
+    featured: true,
+    createdAt: new Date('2024-01-10')
   }
 ]
 
@@ -589,5 +1282,23 @@ export const testimonials = [
     text: 'The Taj Mahal sunrise tour was breathtaking. Professional guide made it very informative.',
     tour: 'Taj Mahal & Agra Heritage',
     location: 'Kolkata'
+  },
+  {
+    id: '7',
+    name: 'Rajesh Kumar',
+    avatar: '/avatars/rajesh.jpg',
+    rating: 5,
+    text: 'The Jharkhand waterfall tour was absolutely breathtaking! The local guides were knowledgeable and the community support aspect made the trip even more meaningful.',
+    tour: 'Jharkhand Waterfall Adventure',
+    location: 'Patna, Bihar'
+  },
+  {
+    id: '8',
+    name: 'Priya Sharma',
+    avatar: '/avatars/priya2.jpg',
+    rating: 5,
+    text: 'The pilgrimage tour to Baidyanath Dham and Parasnath Hill was spiritually fulfilling. The arrangements were excellent and the local vendors provided authentic experiences.',
+    tour: 'Jharkhand Pilgrimage Tour',
+    location: 'Delhi, India'
   }
 ]

@@ -3,7 +3,7 @@
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Float, Sphere, MeshDistortMaterial, Text3D, Center } from '@react-three/drei'
+import { Float, Sphere, MeshDistortMaterial } from '@react-three/drei'
 import { Star, Quote, ChevronLeft, ChevronRight, Users, MapPin } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -33,21 +33,6 @@ function FloatingAvatar({ color, name, isActive }: { color: string, name: string
             metalness={0.8}
           />
         </Sphere>
-        
-        <Center position={[0, 0, 0]}>
-          <Text3D
-            font="/fonts/helvetiker_regular.typeface.json"
-            size={0.2}
-            height={0.05}
-            curveSegments={12}
-            bevelEnabled
-            bevelThickness={0.02}
-            bevelSize={0.02}
-          >
-            {name.charAt(0)}
-            <meshStandardMaterial color="white" />
-          </Text3D>
-        </Center>
       </group>
     </Float>
   )
@@ -144,7 +129,7 @@ export default function TestimonialsSection() {
           </h2>
           <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
             Real experiences from thousands of happy travelers who've discovered 
-            the world with TravelTogether.
+            the world with Travel-Ease.
           </p>
         </motion.div>
 

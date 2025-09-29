@@ -20,7 +20,6 @@ import {
 import dynamic from 'next/dynamic';
 
 // Dynamically import 3D components
-const AccessibleFlightModel = dynamic(() => import('@/components/3d/accessible-flight-model'), { ssr: false });
 
 const accessibilityFeatures = [
   {
@@ -113,28 +112,8 @@ export default function AccessibleTravelPage() {
           
           <div className="flex justify-center items-center gap-4 text-sm text-gray-600">
             <Phone className="w-4 h-4" />
-            <span>24/7 Accessibility Support: +91 93103 69926</span>
+            <span>24/7 Accessibility Support: +91 93103 69192</span>
           </div>
-        </motion.div>
-
-        {/* 3D Flight Model Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16"
-        >
-          <Card className="p-8 bg-white/80 backdrop-blur-sm border-0 shadow-xl">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              Interactive Flight Experience
-            </h2>
-            <div className="h-[400px] rounded-lg overflow-hidden">
-              <AccessibleFlightModel />
-            </div>
-            <p className="text-center text-gray-600 mt-4">
-              Explore our accessible aircraft interior with wheelchair-friendly aisles and special assistance features
-            </p>
-          </Card>
         </motion.div>
 
         {/* Accessibility Features */}

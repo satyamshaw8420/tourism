@@ -1,6 +1,0 @@
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="800" height="600" fill="#3b82f6"/>
-  <circle cx="600" cy="200" r="50" fill="#fbbf24"/>
-  <rect x="100" y="400" width="600" height="150" fill="#10b981"/>
-  <text x="400" y="300" font-family="Arial" font-size="48" fill="white" text-anchor="middle">Goa Beach</text>
-</svg>
