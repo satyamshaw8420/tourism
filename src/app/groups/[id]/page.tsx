@@ -3,11 +3,11 @@
 import { useState, use } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  ArrowLeft, Users, MapPin, Calendar, DollarSign, Settings, 
-  UserPlus, Share2, Heart, Star, Clock, Wallet, Target,
-  TrendingUp, Activity, MessageCircle, Bell, CreditCard,
-  CheckCircle, AlertCircle, Plus, Edit, Trash2, X, Copy,
-  Send, LogOut, Shield, Eye, EyeOff, Globe
+  ArrowLeft, Users, Calendar, DollarSign, Settings, 
+  UserPlus, Share2, Heart, Wallet, Target,
+  TrendingUp, Activity, MessageCircle, CreditCard,
+  CheckCircle, AlertCircle, Edit, Trash2, X, Copy,
+  Send, LogOut, Shield, Globe
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'

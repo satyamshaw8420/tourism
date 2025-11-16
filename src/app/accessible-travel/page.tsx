@@ -17,7 +17,7 @@ import {
   MapPin,
   Phone
 } from 'lucide-react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic' // Unused import - commented out to fix ESLint warning
 
 // Dynamically import 3D components
 

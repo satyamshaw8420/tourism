@@ -17,7 +17,7 @@ export default function ComprehensiveImageTestPage() {
       initialStatus[dest.id] = { status: 'loading' }
     })
     setImageLoadStatus(initialStatus)
-  }, [])
+  }, [testDestinations])
   
   const handleImageLoad = (id: string, width?: number, height?: number) => {
     setImageLoadStatus(prev => ({

@@ -3,9 +3,8 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  Plus, Users, MapPin, Calendar, DollarSign, Search, Filter,
-  Star, Clock, UserPlus, Settings, Wallet, Target, TrendingUp,
-  Globe, Heart, Share2, X, Copy, Send
+  Plus, Users, Calendar, Search, Filter,
+  UserPlus, Share2, X, Copy
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'

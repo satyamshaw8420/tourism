@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, use } from 'react'
-import { motion } from 'framer-motion'
 import { ArrowLeft, Calendar, Users, CreditCard, Shield, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'

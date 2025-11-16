@@ -1,7 +1,6 @@
 'use client'
 
 import { sampleDestinations } from '@/data/sample-data'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 export default function ImageTestPage() {

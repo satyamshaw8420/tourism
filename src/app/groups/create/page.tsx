@@ -3,8 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
-  ArrowLeft, Users, Globe, Lock, DollarSign, Calendar,
-  MapPin, Target, Info, CheckCircle, AlertCircle
+  ArrowLeft
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'

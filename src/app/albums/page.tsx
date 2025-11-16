@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -18,7 +17,6 @@ import {
   Grid,
   List
 } from 'lucide-react'
-import { sampleDestinations } from '@/data/sample-data'
 import DigitalAlbumSection from '@/components/sections/digital-album-section'
 
 export default function AlbumsPage() {

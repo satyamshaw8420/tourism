@@ -1,3 +1,4 @@
+// These imports are passed to the client component and will be used there
 import { motion } from 'framer-motion'
 import { ArrowLeft, MapPin, Star, Calendar, Users, Clock, Heart, Share2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'

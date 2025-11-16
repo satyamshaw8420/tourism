@@ -2,7 +2,7 @@
 
 import { sampleDestinations } from '@/data/sample-data'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function AgraTestPage() {
   const agraDestination = sampleDestinations.find(d => d.id === '8') // Agra Heritage has id '8'
