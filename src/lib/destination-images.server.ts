@@ -12,7 +12,7 @@ import path from 'path';
  * @param destinationName The name of the destination
  * @returns Array of image paths
  */
-export function getDestinationImagesServer(destinationId: string, destinationName: string): string[] {
+export function getDestinationImagesServer(_destinationId: string, destinationName: string): string[] {
   try {
     // Convert destination name to folder name format
     const folderName = destinationName.toLowerCase().replace(/\s+/g, '-');
@@ -91,8 +91,8 @@ export function getDestinationImagesServer(destinationId: string, destinationNam
     }
     
     return readImagesFromDirectory(destDir, folderName);
-  } catch (error) {
-    console.error('Error reading destination images:', error);
+  } catch (_error) {
+    console.error('Error reading destination images:', _error);
     return [];
   }
 }
@@ -119,8 +119,8 @@ function readImagesFromDirectory(directoryPath: string, folderName: string): str
     
     // Return full paths for the images
     return imageFiles.map(file => `/destinations/${folderName}/${file}`);
-  } catch (error) {
-    console.error('Error reading images from directory:', error);
+  } catch (_error) {
+    console.error('Error reading images from directory:', _error);
     return [];
   }
 }
@@ -146,7 +146,7 @@ export function hasDestinationFolder(destinationName: string): boolean {
     const folderName = destinationName.toLowerCase().replace(/\s+/g, '-');
     const destDir = path.join(process.cwd(), 'public', 'destinations', folderName);
     return fs.existsSync(destDir);
-  } catch (error) {
+  } catch (_error) {
     return false;
   }
 }

@@ -10,7 +10,7 @@
  * @param destinationName The name of the destination
  * @returns Array of image paths (empty in client version)
  */
-export function getDestinationImages(destinationId: string, destinationName: string): string[] {
+export function getDestinationImages(_destinationId: string, _destinationName: string): string[] {
   // In a real implementation, this would fetch from an API
   // For now, we return an empty array as this function should not be used client-side
   console.warn('getDestinationImages should be used server-side only');
@@ -23,7 +23,7 @@ export function getDestinationImages(destinationId: string, destinationName: str
  * @param destinationName The name of the destination
  * @returns Main image path
  */
-export function getMainDestinationImage(destinationId: string, destinationName: string): string {
+export function getMainDestinationImage(_destinationId: string, _destinationName: string): string {
   // This would typically be provided by the server component
   return '/placeholder-destination.jpg';
 }
