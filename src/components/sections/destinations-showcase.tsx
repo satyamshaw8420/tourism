@@ -2,14 +2,32 @@
 
 import { useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { MapPin, Star, ArrowRight, Plane } from 'lucide-react'
+import { MapPin, Star, ArrowRight, Plane, Image as ImageIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { sampleDestinations } from '@/data/sample-data'
 import Link from 'next/link'
 import Image from 'next/image'
 
-function Interactive3DCard({ destination, isActive }: { destination: any, isActive: boolean }) {
+// Define the type for our destination with preloaded image data
+interface DestinationWithImages {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  category: string;                    
+  location: {
+    lat: number;
+    lng: number;
+    address: string;
+  };
+  rating: number;
+  reviewCount: number;
+  featured: boolean;
+  createdAt: Date;
+  mainImage: string;
+}
+
+function Interactive3DCard({ destination }: { destination: DestinationWithImages }) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   
@@ -19,6 +37,9 @@ function Interactive3DCard({ destination, isActive }: { destination: any, isActi
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["15deg", "-15deg"])
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-15deg", "15deg"])
   
+  // Use the preloaded main image
+  const displayImage = destination.mainImage;
+
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect()
     const width = rect.width
@@ -55,13 +76,22 @@ function Interactive3DCard({ destination, isActive }: { destination: any, isActi
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10"></div>
           <div className="w-full h-full relative">
             <Image
-              src={destination.image}
+              src={displayImage}
               alt={destination.name}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-110"
               onError={(e) => {
-                console.error(`Failed to load image for ${destination.name}:`, destination.image);
+                console.error(`Failed to load image for ${destination.name}:`, displayImage);
+                // Fallback to the original image if the first one fails
+                const target = e.target as HTMLImageElement;
+                if (target.src !== destination.image) {
+                  target.src = destination.image;
+                } else {
+                  // If both fail, use placeholder
+                  target.src = '/placeholder-destination.jpg';
+                }
               }}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </div>
@@ -128,30 +158,10 @@ function Interactive3DCard({ destination, isActive }: { destination: any, isActi
   )
 }
 
-export default function DestinationsShowcase() {
+export default function DestinationsShowcaseClient({ featuredDestinations }: { featuredDestinations: DestinationWithImages[] }) {
   const [activeCategory, setActiveCategory] = useState('all')
   
   const categories = ['all', 'beach', 'mountain', 'heritage', 'adventure', 'city']
-  
-  // Get featured destinations (first 6 featured ones)
-  let featuredDestinations = sampleDestinations.filter(d => d.featured).slice(0, 6)
-  
-  // Ensure we have some Jharkhand destinations in the featured list
-  const jharkhandDestinations = sampleDestinations.filter(d => 
-    d.location.address.includes('Jharkhand') && d.featured
-  )
-  
-  // If we don't have enough Jharkhand destinations in featured, add some
-  if (jharkhandDestinations.length > 0) {
-    // Replace some of the existing featured destinations with Jharkhand ones
-    const nonJharkhandFeatured = featuredDestinations.filter(d => 
-      !d.location.address.includes('Jharkhand')
-    )
-    
-    // Add at least 2 Jharkhand destinations to the featured list
-    const jharkhandToAdd = jharkhandDestinations.slice(0, 2)
-    featuredDestinations = [...jharkhandToAdd, ...nonJharkhandFeatured].slice(0, 6)
-  }
   
   const filteredDestinations = activeCategory === 'all' 
     ? featuredDestinations 
@@ -286,7 +296,6 @@ export default function DestinationsShowcase() {
             >
               <Interactive3DCard 
                 destination={destination} 
-                isActive={true}
               />
             </motion.div>
           ))}

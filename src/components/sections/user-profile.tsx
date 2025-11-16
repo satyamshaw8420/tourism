@@ -63,18 +63,6 @@ const userTrips = [
     coverImage: '/albums/himachal-album.jpg',
     photos: 38,
     likes: 98
-  },
-  {
-    id: '3',
-    title: 'Kerala Backwater Cruise',
-    destination: sampleDestinations[4],
-    date: 'Jan 5-8, 2025',
-    travelers: 4,
-    status: 'upcoming',
-    rating: null,
-    coverImage: '/albums/kerala-album.jpg',
-    photos: 0,
-    likes: 0
   }
 ]
 

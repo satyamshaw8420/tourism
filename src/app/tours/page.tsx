@@ -178,9 +178,23 @@ export default function ToursPage() {
             <motion.div key={tour.id} variants={itemVariants}>
               <Card className="group hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white border-0 shadow-lg hover:scale-[1.02]">
                 <div className="relative">
-                  <div className="aspect-[16/10] bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 relative overflow-hidden">
-                    {/* Placeholder for image with better design */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="aspect-[16/10] relative overflow-hidden">
+                    {tour.images && tour.images.length > 0 ? (
+                      <>
+                        <img 
+                          src={tour.images[0]} 
+                          alt={tour.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/placeholder-destination.jpg';
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      </>
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500" />
+                    )}
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-white font-bold text-lg mb-1">{tour.destination.name}</h3>
                       <p className="text-white/80 text-sm">{tour.destination.location.address}</p>

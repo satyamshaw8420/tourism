@@ -1,21 +1,21 @@
-'use client'
+'use client';
 
-import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   MessageCircle, X, Send, Bot, User, Sparkles, MapPin, 
   Calendar, Users, DollarSign, Plane, Heart, Star, 
   Loader2, Minimize2, Maximize2 
-} from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { useAIChat } from '@/hooks/useAIChat'
-import Link from 'next/link'
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { useAIChat } from '@/hooks/useAIChat';
+import Link from 'next/link';
 
 interface AIChatWidgetProps {
-  isOpen: boolean
-  onToggle: () => void
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
 const quickActionPrompts = [
@@ -25,27 +25,27 @@ const quickActionPrompts = [
   "Heritage and cultural tours",
   "Best group travel options",
   "Weekend getaway ideas"
-]
+];
 
 export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
-  const { messages, isLoading, sendMessage, addMessage } = useAIChat()
-  const [inputValue, setInputValue] = useState('')
-  const [isMinimized, setIsMinimized] = useState(false)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
-  const [hasInitialized, setHasInitialized] = useState(false)
+  const { messages, isLoading, sendMessage, addMessage } = useAIChat();
+  const [inputValue, setInputValue] = useState('');
+  const [isMinimized, setIsMinimized] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
   // Auto scroll to bottom when new messages arrive
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages])
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   // Focus input when chat opens
   useEffect(() => {
     if (isOpen && !isMinimized) {
-      setTimeout(() => inputRef.current?.focus(), 100)
+      setTimeout(() => inputRef.current?.focus(), 100);
     }
-  }, [isOpen, isMinimized])
+  }, [isOpen, isMinimized]);
 
   // Initialize with welcome message
   useEffect(() => {
@@ -54,22 +54,22 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
         type: 'ai',
         message: "Hello! 👋 I'm your AI travel assistant. I can help you find perfect destinations, plan itineraries, and suggest tours based on your preferences. What kind of travel experience are you looking for?",
         quickActions: quickActionPrompts
-      })
-      setHasInitialized(true)
+      });
+      setHasInitialized(true);
     }
-  }, [isOpen, messages.length, hasInitialized])
+  }, [isOpen, messages.length, hasInitialized, addMessage]);
 
   const handleSendMessage = (message: string) => {
-    if (!message.trim()) return
-    sendMessage(message.trim())
-    setInputValue('')
-  }
+    if (!message.trim()) return;
+    sendMessage(message.trim());
+    setInputValue('');
+  };
 
   const handleQuickAction = (action: string) => {
-    handleSendMessage(action)
-  }
+    handleSendMessage(action);
+  };
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <motion.div
@@ -241,5 +241,5 @@ export default function AIChatWidget({ isOpen, onToggle }: AIChatWidgetProps) {
         )}
       </Card>
     </motion.div>
-  )
+  );
 }

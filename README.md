@@ -1,3 +1,66 @@
+# Travel-Ease
+
+Travel-Ease is a modern travel booking platform built with Next.js 14, TypeScript, and Tailwind CSS.
+
+## Features
+
+- Destination browsing with image galleries
+- Tour package booking
+- User authentication
+- Responsive design
+- Interactive 3D globe
+- Real-time updates with Convex
+
+## Image Management System
+
+Travel-Ease includes a comprehensive image management system for destination photos:
+
+### Components
+
+1. **DestinationImageGallery** - Full-featured gallery with modal viewing
+2. **CompactDestinationGallery** - Compact gallery for cards and lists
+3. **DestinationImageViewer** - Modal image viewer
+
+### File Structure
+
+```
+public/
+└── destinations/
+    ├── destination-name-1/
+    │   ├── image1.jpg
+    │   ├── image2.jpg
+    │   └── ...
+    ├── destination-name-2/
+    │   ├── image1.jpg
+    │   └── ...
+    └── ...
+```
+
+### Server-Side vs Client-Side
+
+To resolve the "Module not found: Can't resolve 'fs'" error, we've separated server-side and client-side functionality:
+
+- **Server-side utilities**: `src/lib/destination-images.server.ts` (uses fs, path)
+- **Client-side utilities**: `src/lib/destination-images.ts` (safe for browser)
+- **API routes**: `src/app/api/destination-images/route.ts` (server-side processing)
+
+### Usage
+
+To manage destination images:
+
+```bash
+# List all destination folders
+npm run manage-images list
+
+# Generate a detailed report
+npm run manage-images report
+
+# Create folder for a new destination
+npm run manage-images create "Destination Name"
+```
+
+For detailed usage of image components, see [DESTINATION_IMAGES_USAGE_GUIDE.md](DESTINATION_IMAGES_USAGE_GUIDE.md).
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

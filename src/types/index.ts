@@ -11,41 +11,49 @@ export interface User {
 }
 
 export interface Destination {
-  id: string
-  name: string
-  description: string
-  image: string
-  category: 'beach' | 'mountain' | 'heritage' | 'adventure' | 'city'
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  images?: string[]; // Optional array of additional images
+  category: 'beach' | 'mountain' | 'heritage' | 'adventure' | 'city';
   location: {
-    lat: number
-    lng: number
-    address: string
-  }
-  rating: number
-  reviewCount: number
-  featured: boolean
-  createdAt: Date
+    lat: number;
+    lng: number;
+    address: string;
+  };
+  rating: number;
+  reviewCount: number;
+  featured?: boolean;
+  createdAt: Date;
 }
 
 export interface TourPackage {
-  id: string
-  title: string
-  description: string
-  images: string[]
-  destination: Destination
-  duration: number // in days
-  price: number
-  originalPrice?: number
-  maxGroupSize: number
-  minGroupSize: number
-  inclusions: string[]
-  exclusions: string[]
-  itinerary: ItineraryDay[]
-  availability: Date[]
-  rating: number
-  reviewCount: number
-  featured: boolean
-  createdAt: Date
+  id: string;
+  title: string;
+  description: string;
+  images: string[];
+  destination: Destination;
+  duration: number;
+  price: number;
+  originalPrice?: number;
+  maxGroupSize: number;
+  minGroupSize: number;
+  inclusions: string[];
+  exclusions: string[];
+  itinerary: {
+    day: number;
+    title: string;
+    description: string;
+    activities: string[];
+    meals?: ('breakfast' | 'lunch' | 'dinner')[];
+    accommodation?: string;
+  }[];
+  availability: Date[];
+  rating: number;
+  reviewCount: number;
+  featured?: boolean;
+  createdAt: Date;
 }
 
 export interface ItineraryDay {

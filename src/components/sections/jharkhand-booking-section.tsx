@@ -34,6 +34,9 @@ export default function JharkhandBookingSection() {
 
   const handleBookNow = (packageItem: any) => {
     setSelectedPackage(packageItem)
+    // Reset form when selecting a new package
+    setTravelDate('')
+    setTravelers(2)
   }
 
   const handleConfirmBooking = () => {
@@ -43,7 +46,15 @@ export default function JharkhandBookingSection() {
       setSelectedPackage(null)
       setTravelDate('')
       setTravelers(2)
+    } else {
+      alert('Please fill in all required fields.')
     }
+  }
+
+  const handleCancel = () => {
+    setSelectedPackage(null)
+    setTravelDate('')
+    setTravelers(2)
   }
 
   return (
@@ -85,11 +96,25 @@ export default function JharkhandBookingSection() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
             className="max-w-2xl mx-auto"
           >
             <Card className="p-8 bg-white rounded-3xl shadow-2xl border-0">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">{selectedPackage.title}</h3>
-              <p className="text-gray-600 mb-6">{selectedPackage.description}</p>
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">{selectedPackage.title}</h3>
+                  <p className="text-gray-600 mt-2">{selectedPackage.description}</p>
+                </div>
+                <button 
+                  onClick={handleCancel}
+                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                  aria-label="Close"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
               
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div>
@@ -133,7 +158,7 @@ export default function JharkhandBookingSection() {
               
               <div className="flex space-x-4">
                 <Button 
-                  onClick={() => setSelectedPackage(null)}
+                  onClick={handleCancel}
                   variant="outline"
                   className="flex-1 border-gray-300 text-gray-700 hover:bg-gray-50"
                 >
@@ -159,8 +184,21 @@ export default function JharkhandBookingSection() {
             {jharkhandPackages.map((packageItem, index) => (
               <motion.div key={packageItem.id} variants={itemVariants}>
                 <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 h-full flex flex-col">
-                  <div className="h-48 bg-gradient-to-r from-blue-400 to-purple-500 relative">
-                    <div className="absolute inset-0 bg-black/10" />
+                  {/* Package Image */}
+                  <div className="h-48 relative">
+                    {packageItem.images && packageItem.images.length > 0 ? (
+                      <img 
+                        src={packageItem.images[0]} 
+                        alt={packageItem.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = '/placeholder-destination.jpg';
+                        }}
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-r from-blue-400 to-purple-500" />
+                    )}
                     <div className="absolute bottom-4 left-4 right-4">
                       <h3 className="text-white font-bold text-xl">{packageItem.title}</h3>
                     </div>

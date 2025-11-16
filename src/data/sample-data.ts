@@ -53,7 +53,7 @@ export const sampleDestinations: Destination[] = [
     id: '4',
     name: 'Ladakh Adventure',
     description: 'Experience high-altitude adventure in the land of high passes',
-    image: '/destinations/ladakh.jpg',
+    image: '/destinations/ladakh-adventure/ladakh-adventure-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 34.1526,
@@ -66,26 +66,10 @@ export const sampleDestinations: Destination[] = [
     createdAt: new Date('2024-01-04')
   },
   {
-    id: '5',
-    name: 'Kerala Backwaters',
-    description: 'Cruise through serene backwaters and experience God\'s Own Country',
-    image: '/destinations/kerala.jpg',
-    category: 'beach',
-    location: {
-      lat: 10.8505,
-      lng: 76.2711,
-      address: 'Kerala, India'
-    },
-    rating: 4.6,
-    reviewCount: 1450,
-    featured: true,
-    createdAt: new Date('2024-01-05')
-  },
-  {
     id: '6',
     name: 'Mumbai City',
     description: 'Discover the bustling financial capital and Bollywood hub of India',
-    image: '/destinations/mumbai.jpg',
+    image: '/destinations/mumbai/mumbai.jpg',
     category: 'city',
     location: {
       lat: 19.0760,
@@ -101,7 +85,7 @@ export const sampleDestinations: Destination[] = [
     id: '7',
     name: 'Rishikesh Spiritual',
     description: 'Find inner peace in the yoga capital of the world',
-    image: '/destinations/rishikesh.jpg',
+    image: '/destinations/rishikesh-spiritual/rishikesh-spiritual-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 30.0869,
@@ -133,7 +117,7 @@ export const sampleDestinations: Destination[] = [
     id: '9',
     name: 'Darjeeling Hills',
     description: 'Experience tea gardens and panoramic Himalayan views',
-    image: '/destinations/darjeeling.jpg',
+    image: '/destinations/darjeeling-hills/darjeeling-hills-main-attraction.jpg',
     category: 'mountain',
     location: {
       lat: 27.0410,
@@ -149,7 +133,7 @@ export const sampleDestinations: Destination[] = [
     id: '10',
     name: 'Andaman Islands',
     description: 'Dive into crystal clear waters and pristine coral reefs',
-    image: '/destinations/andaman.jpg',
+    image: '/destinations/andaman-islands/andaman-islands-main-attraction.jpg',
     category: 'beach',
     location: {
       lat: 11.7401,
@@ -165,7 +149,7 @@ export const sampleDestinations: Destination[] = [
     id: '11',
     name: 'Jaipur Pink City',
     description: 'Explore the vibrant markets and royal palaces of the Pink City',
-    image: '/destinations/jaipur.jpg',
+    image: '/destinations/jaipur-pink-city/jaipur-pink-city-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 26.9124,
@@ -181,7 +165,7 @@ export const sampleDestinations: Destination[] = [
     id: '12',
     name: 'Manali Adventure',
     description: 'Enjoy snow-capped peaks and thrilling adventure sports',
-    image: '/destinations/manali.jpg',
+    image: '/destinations/manali-adventure/manali-adventure-main-attraction.jpg',
     category: 'mountain',
     location: {
       lat: 32.2396,
@@ -197,7 +181,7 @@ export const sampleDestinations: Destination[] = [
     id: '13',
     name: 'Udaipur Lakes',
     description: 'Experience the romance of the City of Lakes and palaces',
-    image: '/destinations/udaipur.jpg',
+    image: '/destinations/udaipur-lakes/udaipur-lakes-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 24.5854,
@@ -213,7 +197,7 @@ export const sampleDestinations: Destination[] = [
     id: '14',
     name: 'Varanasi Spiritual',
     description: 'Witness ancient traditions along the sacred River Ganges',
-    image: '/destinations/varanasi.jpg',
+    image: '/destinations/varanasi-spiritual/varanasi-spiritual-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 25.3176,
@@ -229,7 +213,7 @@ export const sampleDestinations: Destination[] = [
     id: '15',
     name: 'Coorg Coffee Hills',
     description: 'Relax in coffee plantations and misty hill stations',
-    image: '/destinations/coorg.jpg',
+    image: '/destinations/coorg-coffee-hills/coorg-coffee-hills-main-attraction.jpg',
     category: 'mountain',
     location: {
       lat: 12.3375,
@@ -245,7 +229,7 @@ export const sampleDestinations: Destination[] = [
     id: '16',
     name: 'Hampi Ruins',
     description: 'Explore ancient temple ruins and boulder landscapes',
-    image: '/destinations/hampi.jpg',
+    image: '/destinations/hampi-ruins/hampi-ruins-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 15.3350,
@@ -261,7 +245,7 @@ export const sampleDestinations: Destination[] = [
     id: '17',
     name: 'Dassam Falls',
     description: 'A beautiful waterfall surrounded by forest, perfect for picnics and photography',
-    image: '/destinations/dassam-falls.jpg',
+    image: '/destinations/dassam-falls/dassam-falls-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 23.3750,
@@ -293,7 +277,7 @@ export const sampleDestinations: Destination[] = [
     id: '19',
     name: 'Jonha Falls',
     description: 'Also called Gautamdhara, it has a Buddhist monastery nearby',
-    image: '/destinations/jonha-falls.jpg',
+    image: '/destinations/jonha-falls/jonha-falls-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 23.4333,
@@ -309,7 +293,7 @@ export const sampleDestinations: Destination[] = [
     id: '20',
     name: 'Patratu Valley',
     description: 'A winding valley with breathtaking hills, greenery, and a dam',
-    image: '/destinations/patratu-valley.jpg',
+    image: '/destinations/patratu-valley/patratu-valley-main-attraction.jpg',
     category: 'mountain',
     location: {
       lat: 23.6000,
@@ -325,7 +309,7 @@ export const sampleDestinations: Destination[] = [
     id: '21',
     name: 'Netarhat',
     description: 'Known as the "Queen of Chotanagpur," famous for sunrise and sunset views',
-    image: '/destinations/netarhat.jpg',
+    image: '/destinations/netarhat/netarhat-main-attraction.jpg',
     category: 'mountain',
     location: {
       lat: 23.5000,
@@ -341,7 +325,7 @@ export const sampleDestinations: Destination[] = [
     id: '22',
     name: 'Dimna Lake',
     description: 'A serene lake offering water sports and peaceful surroundings',
-    image: '/destinations/dimna-lake.jpg',
+    image: '/destinations/dimna-lake/dimna-lake-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 22.8000,
@@ -357,7 +341,7 @@ export const sampleDestinations: Destination[] = [
     id: '23',
     name: 'Topchanchi Lake',
     description: 'A tranquil artificial lake ideal for a local getaway',
-    image: '/destinations/topchanchi-lake.jpg',
+    image: '/destinations/topchanchi-lake/topchanchi-lake-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 23.8000,
@@ -373,7 +357,7 @@ export const sampleDestinations: Destination[] = [
     id: '24',
     name: 'Maithon Dam',
     description: 'A huge dam on the Barakar River, popular for boating and nature',
-    image: '/destinations/maithon-dam.jpg',
+    image: '/destinations/maithon-dam/maithon-dam-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 23.7833,
@@ -389,7 +373,7 @@ export const sampleDestinations: Destination[] = [
     id: '25',
     name: 'Tilaiya Dam',
     description: 'A peaceful dam surrounded by hills, great for nature lovers',
-    image: '/destinations/tilaiya-dam.jpg',
+    image: '/destinations/tilaiya-dam/tilaiya-dam-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 24.3000,
@@ -405,7 +389,7 @@ export const sampleDestinations: Destination[] = [
     id: '26',
     name: 'Betla National Park',
     description: 'Home to tigers, elephants, and scenic forests',
-    image: '/destinations/betla-national-park.jpg',
+    image: '/destinations/betla-national-park/betla-national-park-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 23.4167,
@@ -421,7 +405,7 @@ export const sampleDestinations: Destination[] = [
     id: '27',
     name: 'Hazaribagh National Park',
     description: 'Famous for wildlife safaris and forest drives',
-    image: '/destinations/hazaribagh-national-park.jpg',
+    image: '/destinations/hazaribagh-national-park/hazaribagh-national-park-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 23.9833,
@@ -437,7 +421,7 @@ export const sampleDestinations: Destination[] = [
     id: '28',
     name: 'Dalma Wildlife Sanctuary',
     description: 'Known for elephants, trekking trails, and scenic views',
-    image: '/destinations/dalma-wildlife.jpg',
+    image: '/destinations/dalma-wildlife-sanctuary/dalma-wildlife-sanctuary-main-attraction.jpg',
     category: 'adventure',
     location: {
       lat: 22.7000,
@@ -453,7 +437,7 @@ export const sampleDestinations: Destination[] = [
     id: '29',
     name: 'Baidyanath Dham',
     description: 'A Jyotirlinga shrine and one of the holiest Hindu pilgrimage sites',
-    image: '/destinations/baidyanath-dham.jpg',
+    image: '/destinations/baidyanath-dham/baidyanath-dham-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 24.4833,
@@ -469,7 +453,7 @@ export const sampleDestinations: Destination[] = [
     id: '30',
     name: 'Parasnath Hill',
     description: 'The most sacred Jain pilgrimage site with spiritual trekking trails',
-    image: '/destinations/parasnath-hill.jpg',
+    image: '/destinations/parasnath-hill/parasnath-hill-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 23.7000,
@@ -485,7 +469,7 @@ export const sampleDestinations: Destination[] = [
     id: '31',
     name: 'Pahari Mandir',
     description: 'A hilltop Shiva temple offering a panoramic view of the city',
-    image: '/destinations/pahari-mandir.jpg',
+    image: '/destinations/pahari-mandir/pahari-mandir-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 23.3500,
@@ -501,7 +485,7 @@ export const sampleDestinations: Destination[] = [
     id: '32',
     name: 'Jagannath Temple',
     description: 'A 17th-century temple resembling Puri\'s Jagannath Temple',
-    image: '/destinations/jagannath-temple.jpg',
+    image: '/destinations/jagannath-temple/jagannath-temple-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 23.3500,
@@ -517,7 +501,7 @@ export const sampleDestinations: Destination[] = [
     id: '33',
     name: 'Rajrappa Mandir',
     description: 'A Shaktipeeth temple of Goddess Chhinnamastika at the confluence of two rivers',
-    image: '/destinations/rajrappa-mandir.jpg',
+    image: '/destinations/rajrappa-mandir/rajrappa-mandir-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 23.7333,
@@ -549,7 +533,7 @@ export const sampleDestinations: Destination[] = [
     id: '35',
     name: 'Jamshedpur',
     description: 'Famous for Jubilee Park, Dimna Lake, and Tata Steel heritage',
-    image: '/destinations/jamshedpur.jpg',
+    image: '/destinations/jamshedpur/jamshedpur-main-attraction.jpg',
     category: 'city',
     location: {
       lat: 22.8000,
@@ -565,7 +549,7 @@ export const sampleDestinations: Destination[] = [
     id: '36',
     name: 'Dhanbad City',
     description: 'Popular for Maithon Dam, Topchanchi Lake, and mining tours',
-    image: '/destinations/dhanbad.jpg',
+    image: '/destinations/dhanbad-city/dhanbad-city-main-attraction.jpg',
     category: 'city',
     location: {
       lat: 23.7833,
@@ -581,7 +565,7 @@ export const sampleDestinations: Destination[] = [
     id: '37',
     name: 'Hazaribagh Town',
     description: 'Known for its national park, scenic hills, and local markets',
-    image: '/destinations/hazaribagh-town.jpg',
+    image: '/destinations/hazaribagh-town/hazaribagh-town-main-attraction.jpg',
     category: 'city',
     location: {
       lat: 23.9833,
@@ -597,7 +581,7 @@ export const sampleDestinations: Destination[] = [
     id: '38',
     name: 'Giridih Town',
     description: 'Famous for Parasnath Hills and surrounding forests',
-    image: '/destinations/giridih-town.jpg',
+    image: '/destinations/giridih-town/giridih-town-main-attraction.jpg',
     category: 'city',
     location: {
       lat: 24.1833,
@@ -613,7 +597,7 @@ export const sampleDestinations: Destination[] = [
     id: '39',
     name: 'Deoghar Town',
     description: 'Famous for Baidyanath Dham, temples, and sweets like peda',
-    image: '/destinations/deoghar-town.jpg',
+    image: '/destinations/deoghar-town/deoghar-town-main-attraction.jpg',
     category: 'city',
     location: {
       lat: 24.4833,
@@ -629,7 +613,7 @@ export const sampleDestinations: Destination[] = [
     id: '40',
     name: 'Chaibasa',
     description: 'Known for tribal culture and natural surroundings',
-    image: '/destinations/chaibasa.jpg',
+    image: '/destinations/chaibasa/chaibasa-main-attraction.jpg',
     category: 'city',
     location: {
       lat: 22.5833,
@@ -645,7 +629,7 @@ export const sampleDestinations: Destination[] = [
     id: '41',
     name: 'Palamu Fort',
     description: 'A historic fort inside Betla National Park',
-    image: '/destinations/palamu-fort.jpg',
+    image: '/destinations/palamu-fort/palamu-fort-main-attraction.jpg',
     category: 'heritage',
     location: {
       lat: 24.0000,
@@ -752,51 +736,96 @@ export const sampleTourPackages: TourPackage[] = [
   },
   {
     id: '3',
-    title: 'Kerala Backwater Cruise - 4 Days',
-    description: 'Sail through tranquil backwaters and experience traditional houseboat stays',
-    images: ['/tours/kerala-1.jpg', '/tours/kerala-2.jpg', '/tours/kerala-3.jpg'],
-    destination: sampleDestinations[4], // Kerala Backwaters
-    duration: 4,
-    price: 28000,
-    originalPrice: 32000,
-    maxGroupSize: 10,
-    minGroupSize: 2,
+    title: 'Rajasthan Royal Heritage - 7 Days',
+    description: 'Discover the magnificent palaces, forts, and rich cultural heritage of Rajasthan',
+    images: ['/tours/rajasthan-1.jpg', '/tours/rajasthan-2.jpg', '/tours/rajasthan-3.jpg'],
+    destination: sampleDestinations[2], // Rajasthan Heritage
+    duration: 7,
+    price: 45000,
+    originalPrice: 52000,
+    maxGroupSize: 15,
+    minGroupSize: 4,
     inclusions: [
-      'Houseboat accommodation',
-      'All meals on houseboat',
-      'Backwater cruise',
-      'Coconut farm visit',
-      'Traditional Kerala massage'
+      'Luxury heritage hotel accommodation',
+      'All meals (breakfast, lunch, dinner)',
+      'Professional tour guide',
+      'Transportation between cities',
+      'Entry fees to all monuments',
+      'Cultural folk show',
+      'Traditional Rajasthani dinner'
     ],
     exclusions: [
-      'Transportation to Alleppey',
+      'Alcoholic beverages',
       'Personal expenses',
-      'Alcoholic beverages'
+      'Travel insurance',
+      'Tips for guides'
     ],
     itinerary: [
       {
         day: 1,
-        title: 'Arrival in Alleppey',
-        description: 'Board traditional houseboat and start backwater journey',
-        activities: ['Houseboat check-in', 'Backwater cruise', 'Village visit'],
-        meals: ['lunch', 'dinner']
+        title: 'Arrival in Jaipur - The Pink City',
+        description: 'Welcome to the royal state of Rajasthan. Check-in to your heritage hotel and enjoy an evening welcome ceremony.',
+        activities: ['Airport pickup', 'Hotel check-in', 'Welcome ceremony', 'Evening at leisure'],
+        meals: ['dinner'],
+        accommodation: 'Heritage Hotel'
       },
       {
         day: 2,
-        title: 'Backwater Exploration',
-        description: 'Cruise through narrow canals and coconut groves',
-        activities: ['Canal cruise', 'Fishing', 'Local market visit'],
+        title: 'Jaipur City Tour',
+        description: 'Explore the architectural marvels of Jaipur including the iconic Amber Fort.',
+        activities: ['Amber Fort with Elephant ride', 'City Palace', 'Hawa Mahal', 'Jantar Mantar'],
         meals: ['breakfast', 'lunch', 'dinner'],
-        accommodation: 'Traditional Houseboat'
+        accommodation: 'Heritage Hotel'
+      },
+      {
+        day: 3,
+        title: 'Jaipur to Jodhpur - The Blue City',
+        description: 'Drive to Jodhpur and explore the magnificent Mehrangarh Fort.',
+        activities: ['Drive to Jodhpur (6-7 hours)', 'Mehrangarh Fort', 'Umaid Bhawan Palace', 'Local market visit'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Heritage Hotel'
+      },
+      {
+        day: 4,
+        title: 'Jodhpur to Jaisalmer - The Golden City',
+        description: 'Continue to Jaisalmer, known for its golden sandstone architecture.',
+        activities: ['Drive to Jaisalmer (5-6 hours)', 'Jaisalmer Fort', 'Patwon Ki Haveli', 'Evening at leisure'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Heritage Hotel'
+      },
+      {
+        day: 5,
+        title: 'Jaisalmer Sightseeing',
+        description: 'Explore the desert city with its ancient havelis and sand dunes.',
+        activities: ['Sam Sand Dunes with Camel Safari', 'Desert Cultural Program', 'Nathmal Ji Ki Haveli', 'Jain Temples'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Heritage Hotel'
+      },
+      {
+        day: 6,
+        title: 'Jaisalmer to Udaipur - The City of Lakes',
+        description: 'Drive to the romantic city of Udaipur, known for its beautiful lakes and palaces.',
+        activities: ['Drive to Udaipur (8-9 hours)', 'City Palace', 'Lake Pichola boat ride', 'Evening aarti ceremony'],
+        meals: ['breakfast', 'lunch', 'dinner'],
+        accommodation: 'Lake Palace Hotel'
+      },
+      {
+        day: 7,
+        title: 'Udaipur City Tour & Departure',
+        description: 'Enjoy a final day in the City of Lakes before departure.',
+        activities: ['Saheliyon Ki Bari', 'Jagdish Temple', 'Shopping for local handicrafts', 'Check-out', 'Airport drop'],
+        meals: ['breakfast', 'lunch']
       }
     ],
     availability: [
-      new Date('2024-12-10'),
-      new Date('2024-12-18'),
-      new Date('2025-01-15')
+      new Date('2024-11-15'),
+      new Date('2024-12-01'),
+      new Date('2024-12-20'),
+      new Date('2025-01-10'),
+      new Date('2025-01-30')
     ],
-    rating: 4.6,
-    reviewCount: 289,
+    rating: 4.8,
+    reviewCount: 320,
     featured: true,
     createdAt: new Date('2024-01-03')
   },
@@ -805,7 +834,7 @@ export const sampleTourPackages: TourPackage[] = [
     title: 'Taj Mahal & Agra Heritage - 3 Days',
     description: 'Witness the eternal symbol of love and explore Mughal heritage',
     images: ['/tours/agra-1.jpg', '/tours/agra-2.jpg'],
-    destination: sampleDestinations[7], // Agra Heritage
+    destination: sampleDestinations[6], // Agra Heritage
     duration: 3,
     price: 18000,
     maxGroupSize: 20,
@@ -846,7 +875,7 @@ export const sampleTourPackages: TourPackage[] = [
     title: 'Andaman Island Paradise - 6 Days',
     description: 'Dive into crystal waters and explore tropical marine life',
     images: ['/tours/andaman-1.jpg', '/tours/andaman-2.jpg', '/tours/andaman-3.jpg'],
-    destination: sampleDestinations[9], // Andaman Islands
+    destination: sampleDestinations[8], // Andaman Islands
     duration: 6,
     price: 45000,
     originalPrice: 52000,
@@ -897,7 +926,7 @@ export const sampleTourPackages: TourPackage[] = [
     title: 'Jaipur Royal Experience - 3 Days',
     description: 'Live like royalty in the Pink City with palace stays and cultural shows',
     images: ['/tours/jaipur-1.jpg', '/tours/jaipur-2.jpg'],
-    destination: sampleDestinations[10], // Jaipur Pink City
+    destination: sampleDestinations[9], // Jaipur Pink City
     duration: 3,
     price: 22000,
     maxGroupSize: 15,
@@ -938,7 +967,7 @@ export const sampleTourPackages: TourPackage[] = [
     title: 'Jharkhand Waterfall Adventure - 5 Days',
     description: 'Explore the majestic waterfalls of Jharkhand including Hundru, Dassam, and Jonha Falls with local guides',
     images: ['/tours/jharkhand-1.jpg', '/tours/jharkhand-2.jpg', '/tours/jharkhand-3.jpg'],
-    destination: sampleDestinations[17], // Hundru Falls
+    destination: sampleDestinations[16], // Hundru Falls
     duration: 5,
     price: 22000,
     originalPrice: 25000,
@@ -1011,7 +1040,7 @@ export const sampleTourPackages: TourPackage[] = [
     title: 'Jharkhand Wildlife Safari - 4 Days',
     description: 'Experience the rich wildlife of Jharkhand in Betla and Hazaribagh National Parks',
     images: ['/tours/jharkhand-wildlife-1.jpg', '/tours/jharkhand-wildlife-2.jpg'],
-    destination: sampleDestinations[25], // Betla National Park
+    destination: sampleDestinations[24], // Betla National Park (was 25)
     duration: 4,
     price: 18000,
     maxGroupSize: 12,
@@ -1076,7 +1105,7 @@ export const sampleTourPackages: TourPackage[] = [
     title: 'Jharkhand Pilgrimage Tour - 6 Days',
     description: 'Visit the holiest pilgrimage sites of Jharkhand including Baidyanath Dham and Parasnath Hill',
     images: ['/tours/jharkhand-pilgrimage-1.jpg', '/tours/jharkhand-pilgrimage-2.jpg'],
-    destination: sampleDestinations[28], // Parasnath Hill
+    destination: sampleDestinations[27], // Parasnath Hill (was 28)
     duration: 6,
     price: 25000,
     originalPrice: 28000,
@@ -1158,7 +1187,7 @@ export const sampleTourPackages: TourPackage[] = [
     title: 'Jharkhand Cultural & City Tour - 5 Days',
     description: 'Explore the cultural heritage and major cities of Jharkhand',
     images: ['/tours/jharkhand-cultural-1.jpg', '/tours/jharkhand-cultural-2.jpg'],
-    destination: sampleDestinations[33], // Ranchi City
+    destination: sampleDestinations[32], // Ranchi City (was 33)
     duration: 5,
     price: 20000,
     maxGroupSize: 15,
@@ -1255,15 +1284,6 @@ export const testimonials = [
     text: 'The AI recommendations were spot-on. Found the perfect trip within our budget.',
     tour: 'Rajasthan Heritage',
     location: 'Bangalore'
-  },
-  {
-    id: '4',
-    name: 'Vikram Singh',
-    avatar: '/avatars/vikram.jpg',
-    rating: 5,
-    text: 'Kerala backwaters tour was magical! The houseboat experience was unforgettable.',
-    tour: 'Kerala Backwater Cruise',
-    location: 'Chennai'
   },
   {
     id: '5',

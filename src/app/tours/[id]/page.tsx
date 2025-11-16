@@ -48,8 +48,23 @@ export default function TourDetailPage({ params }: TourDetailPageProps) {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative h-[70vh] bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700">
-        <div className="absolute inset-0 bg-black/20" />
+      <div className="relative h-[70vh]">
+        {tour.images && tour.images.length > 0 ? (
+          <>
+            <img 
+              src={tour.images[0]} 
+              alt={tour.title}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = '/placeholder-destination.jpg';
+              }}
+            />
+            <div className="absolute inset-0 bg-black/40" />
+          </>
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700" />
+        )}
         <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -148,6 +163,29 @@ export default function TourDetailPage({ params }: TourDetailPageProps) {
         >
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
+            {/* Image Gallery */}
+            {tour.images && tour.images.length > 0 && (
+              <motion.div variants={itemVariants}>
+                <Card className="p-4 border-0 shadow-lg">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {tour.images.slice(0, 3).map((image, index) => (
+                      <div key={index} className="aspect-square overflow-hidden rounded-lg">
+                        <img 
+                          src={image} 
+                          alt={`${tour.title} - Image ${index + 1}`}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.src = '/placeholder-destination.jpg';
+                          }}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </Card>
+              </motion.div>
+            )}
+            
             {/* Overview */}
             <motion.div variants={itemVariants}>
               <Card className="p-8 border-0 shadow-lg">

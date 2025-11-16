@@ -43,24 +43,6 @@ const sampleAlbums = [
     ],
     likes: 98,
     shares: 35
-  },
-  {
-    id: '3',
-    title: 'Kerala Backwater Cruise',
-    destination: sampleDestinations[4],
-    date: 'Jan 5-8, 2025',
-    travelers: 4,
-    coverImage: '/albums/kerala-album.jpg',
-    photos: [
-      { id: '1', url: '/albums/kerala-1.jpg', caption: 'Houseboat on tranquil waters' },
-      { id: '2', url: '/albums/kerala-2.jpg', caption: 'Coconut palm lined backwaters' },
-      { id: '3', url: '/albums/kerala-3.jpg', caption: 'Traditional Kerala massage' },
-      { id: '4', url: '/albums/kerala-4.jpg', caption: 'Local fishing techniques' },
-      { id: '5', url: '/albums/kerala-5.jpg', caption: 'Spice plantation tour' },
-      { id: '6', url: '/albums/kerala-6.jpg', caption: 'Ayurvedic wellness session' }
-    ],
-    likes: 156,
-    shares: 67
   }
 ]
 

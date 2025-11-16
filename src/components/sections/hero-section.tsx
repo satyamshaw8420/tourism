@@ -9,7 +9,6 @@ import { useRef, useState } from 'react'
 
 // Dynamically import 3D components to avoid SSR issues
 const AnimatedAirplane = dynamic(() => import('@/components/3d/airplane'), { ssr: false })
-const Real3DEarth = dynamic(() => import('@/components/3d/real-3d-earth'), { ssr: false })
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -310,8 +309,14 @@ export default function HeroSection() {
                 ease: "linear"
               }}
             />
-            <div className="relative z-20 h-96 lg:h-[600px]">
-              <Real3DEarth />
+            <div className="relative z-20 h-96 lg:h-[600px] flex items-center justify-center overflow-hidden rounded-full">
+              <iframe 
+                src="https://my.spline.design/globaltransactions-onqRxVa4u0zMRD8iS4ulgHFa/" 
+                frameBorder="0" 
+                width="110%" 
+                height="110%"
+                className="rounded-full shadow-2xl w-96 h-96 lg:w-[500px] lg:h-[500px] object-cover -ml-4 -mt-4"
+              ></iframe>
             </div>
             
             {/* Enhanced Floating Elements */}
