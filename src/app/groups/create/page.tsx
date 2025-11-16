@@ -367,13 +367,13 @@ export default function CreateGroupPage() {
               {currentStep === 1 && (
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">Basic Information</h2>
-                  <p className="text-gray-600">Tell us about your travel group and what you're planning</p>
+                  <p className="text-gray-600">Tell us about your travel group and what you&#39;re planning</p>
                 </div>
               )}
               {currentStep === 2 && (
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">Trip Details</h2>
-                  <p className="text-gray-600">Where are you going and what's your budget?</p>
+                  <p className="text-gray-600">Where are you going and what&#39;s your budget?</p>
                 </div>
               )}
               {currentStep === 3 && (

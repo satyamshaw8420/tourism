@@ -76,7 +76,7 @@ export default function ContactPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Have questions about your next adventure? We're here to help you plan the perfect trip!
+            Have questions about your next adventure? We&#39;re here to help you plan the perfect trip!
           </p>
         </motion.div>
 

@@ -833,7 +833,7 @@ export default function GroupDetailPage({ params }: GroupDetailPageProps) {
                     <div className="flex-1">
                       <div className="bg-white p-3 rounded-lg shadow-sm">
                         <p className="text-sm font-medium text-gray-900">Rahul Kumar</p>
-                        <p className="text-gray-700">Can't wait! Have we finalized the hotel booking?</p>
+                        <p className="text-gray-700">Can&#39;t wait! Have we finalized the hotel booking?</p>
                       </div>
                       <p className="text-xs text-gray-500 mt-1">1 hour ago</p>
                     </div>

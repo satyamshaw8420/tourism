@@ -37,7 +37,7 @@ export default function DebugImagesPage() {
                         className="max-w-full h-auto rounded"
                         style={{ maxHeight: '200px' }}
                       />
-                      <p className="mt-2 text-sm text-gray-600">If you see a broken image icon, the path is incorrect or file doesn't exist</p>
+                      <p className="mt-2 text-sm text-gray-600">If you see a broken image icon, the path is incorrect or file doesn&#39;t exist</p>
                     </>
                   ) : (
                     <p className="text-red-500">No image path specified</p>

@@ -102,8 +102,8 @@ export default function AgraTestPage() {
           <h3 className="text-lg font-semibold mb-2">File Verification</h3>
           <p>Checking if the image file exists at the specified path...</p>
           <p className="text-sm text-gray-600 mt-2">
-            If you're seeing this page, the Next.js application is running correctly. 
-            The issue might be with the image file itself or how it's being referenced.
+            If you&#39;re seeing this page, the Next.js application is running correctly. 
+            The issue might be with the image file itself or how it&#39;s being referenced.
           </p>
         </div>
       </div>

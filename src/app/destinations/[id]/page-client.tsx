@@ -416,7 +416,7 @@ export default function DestinationDetailClient({
               <motion.div variants={itemVariants}>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Support Local Vendors</h2>
                 <p className="text-gray-600 mb-6">
-                  When you visit Jharkhand, you're not just experiencing natural beauty and culture - you're also supporting local communities. 
+                  When you visit Jharkhand, you&#39;re not just experiencing natural beauty and culture - you&#39;re also supporting local communities. 
                   These local vendors offer authentic products and services that help sustain the local economy.
                 </p>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -455,7 +455,7 @@ export default function DestinationDetailClient({
                 <Card className="mt-6 p-6 bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Support Local Communities</h3>
                   <p className="text-gray-600 mb-4">
-                    By choosing local vendors, you're directly contributing to the economic empowerment of Jharkhand's communities. 
+                    By choosing local vendors, you&#39;re directly contributing to the economic empowerment of Jharkhand&#39;s communities. 
                     Your purchases help preserve traditional crafts and support families who have been practicing these skills for generations.
                   </p>
                   <div className="flex items-center text-green-700">
