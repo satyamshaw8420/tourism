@@ -21,8 +21,8 @@ export default function ConvexTestPage() {
     try {
       await createUser({ email, name, password });
       setMessage('User created successfully!');
-    } catch (error: any) {
-      setMessage(`Error: ${error.message}`);
+    } catch (error: unknown) {
+      setMessage(`Error: ${(error as Error).message || 'Unknown error'}`);
     } finally {
       setIsLoading(false);
     }

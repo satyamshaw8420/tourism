@@ -1,6 +1,41 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+
+// Define types for vendor data
+interface VendorProduct {
+  id: string;
+  name: string;
+  price: string;
+  image: string;
+}
+
+interface VendorReview {
+  id: string;
+  user: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+interface Vendor {
+  id: string;
+  name: string;
+  description: string;
+  rating: number;
+  reviewCount: number;
+  specialties: string[];
+  image: string;
+  location: string;
+  phone: string;
+  email: string;
+  website: string;
+  established: string;
+  artisans: number;
+  about: string;
+  products: VendorProduct[];
+  reviews: VendorReview[];
+}
 import { motion } from 'framer-motion'
 import { Heart, ShoppingCart, Users, Award, MapPin, Phone, Mail, Globe, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -177,7 +212,7 @@ export default function VendorProfile({ params }: { params: Promise<{ id: string
   // Unwrap the params promise using React.use()
   const resolvedParams = React.use(params)
   
-  const [vendor, setVendor] = useState<any>(null)
+  const [vendor, setVendor] = useState<Vendor | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -289,7 +324,7 @@ export default function VendorProfile({ params }: { params: Promise<{ id: string
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Products & Services</h2>
                   <div className="grid md:grid-cols-2 gap-4">
-                    {vendor.products.map((product: any) => (
+                    {vendor.products.map((product: VendorProduct) => (
                       <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                         <div className="h-40 bg-gray-200 flex items-center justify-center">
                           <div className="bg-gray-300 border-2 border-dashed rounded-xl w-16 h-16" />
@@ -306,7 +341,7 @@ export default function VendorProfile({ params }: { params: Promise<{ id: string
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Customer Reviews</h2>
                   <div className="space-y-6">
-                    {vendor.reviews.map((review: any) => (
+                    {vendor.reviews.map((review: VendorReview) => (
                       <div key={review.id} className="border-b border-gray-200 pb-6 last:border-0 last:pb-0">
                         <div className="flex justify-between mb-2">
                           <h3 className="font-bold text-gray-900">{review.user}</h3>
