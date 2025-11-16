@@ -63,7 +63,7 @@ export default function BookingPage({ params }: BookingPageProps) {
           </Link>
           
           <h1 className="text-3xl md:text-4xl font-bold mb-2">Complete Your Booking</h1>
-          <p className="text-xl opacity-90">You're just a few steps away from an amazing adventure!</p>
+          <p className="text-xl opacity-90">You&#39;re just a few steps away from an amazing adventure!</p>
         </div>
       </div>
 

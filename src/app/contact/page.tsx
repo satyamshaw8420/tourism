@@ -51,7 +51,7 @@ export default function ContactPage() {
         >
           <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-4" />
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Thank You!</h2>
-          <p className="text-gray-600">Your message has been sent successfully. We'll get back to you soon!</p>
+          <p className="text-gray-600">Your message has been sent successfully. We&#39;ll get back to you soon!</p>
         </motion.div>
       </div>
     );

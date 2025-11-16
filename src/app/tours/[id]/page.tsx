@@ -200,7 +200,7 @@ export default function TourDetailPage({ params }: TourDetailPageProps) {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                       <Check className="w-5 h-5 text-green-500 mr-2" />
-                      What's Included
+                      What&#39;s Included
                     </h3>
                     <ul className="space-y-3">
                       {tour.inclusions.map((inclusion, index) => (
@@ -215,7 +215,7 @@ export default function TourDetailPage({ params }: TourDetailPageProps) {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                       <X className="w-5 h-5 text-red-500 mr-2" />
-                      What's Not Included
+                      What&#39;s Not Included
                     </h3>
                     <ul className="space-y-3">
                       {tour.exclusions.map((exclusion, index) => (

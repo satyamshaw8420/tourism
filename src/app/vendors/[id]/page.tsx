@@ -229,7 +229,7 @@ export default function VendorProfile({ params }: { params: Promise<{ id: string
       <div className="min-h-screen bg-gradient-to-br from-green-50 to-teal-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-800">Vendor Not Found</h1>
-          <p className="mt-2 text-gray-600">The vendor you're looking for doesn't exist.</p>
+          <p className="mt-2 text-gray-600">The vendor you&#39;re looking for doesn&#39;t exist.</p>
           <Link href="/#vendors">
             <Button className="mt-6 bg-green-600 hover:bg-green-700 text-white">
               Back to Vendors
