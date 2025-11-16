@@ -19,7 +19,7 @@ import {
   List
 } from 'lucide-react'
 import { sampleDestinations } from '@/data/sample-data'
-import DigitalAlbumSection from '@/components/sections\digital-album-section'
+import DigitalAlbumSection from '@/components/sections/digital-album-section'
 
 export default function AlbumsPage() {
   return (
