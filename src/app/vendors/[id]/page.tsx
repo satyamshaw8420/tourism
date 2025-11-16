@@ -43,7 +43,7 @@ import { Card } from '@/components/ui/card'
 import Link from 'next/link'
 
 // Sample vendor data - in a real app this would come from an API
-const vendorData = {
+const vendorData: Record<string, Vendor> = {
   '1': {
     id: '1',
     name: 'Ranchi Tribal Crafts',
@@ -230,7 +230,7 @@ export default function VendorProfile({ params }: { params: Promise<{ id: string
       }
       setLoading(false)
     }, 500)
-  }, [params]) // Use params (the promise) in the dependency array, not resolvedParams.id
+  }, [resolvedParams.id]) // Use resolvedParams.id in the dependency array
 
   if (loading) {
     return (
